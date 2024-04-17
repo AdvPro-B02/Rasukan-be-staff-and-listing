@@ -42,7 +42,7 @@ class ListingControllerTest {
         String listingId = "1";
         boolean status = true;
 
-        ResponseEntity<Void> response = listingController.markListingAsFeatured(listingId, status);
+        ResponseEntity<String> response = listingController.markListingAsFeatured(listingId, status);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
 
@@ -55,7 +55,7 @@ class ListingControllerTest {
     void testRemoveFeaturedStatus() {
         String listingId = "1";
 
-        ResponseEntity<Void> response = listingController.removeFeaturedStatus(listingId);
+        ResponseEntity<String> response = listingController.removeFeaturedStatus(listingId);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
 

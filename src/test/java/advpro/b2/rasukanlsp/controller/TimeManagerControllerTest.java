@@ -22,23 +22,24 @@ class TimeManagerControllerTest {
     @Test
     void testSetExpirationDate() {
         LocalDateTime expirationDate = LocalDateTime.now().plusDays(DAYS_TO_EXPIRE);
-        ResponseEntity<Void> responseEntity = timeManagerController.setExpirationDate(expirationDate);
+        ResponseEntity<String> responseEntity = timeManagerController.setExpirationDate(expirationDate);
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
     }
 
     @Test
     void testCheckExpiration_NotExpired() {
-        LocalDateTime expirationTime = LocalDateTime.now().plusDays(DAYS_TO_EXPIRE);
-        ResponseEntity<Boolean> responseEntity = timeManagerController.checkExpiration(expirationTime);
+        ResponseEntity<String> responseEntity = timeManagerController.checkExpiration();
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        assertEquals(false, responseEntity.getBody());
+        assertEquals("check expiration date: false", responseEntity.getBody());
     }
 
     @Test
     void testCheckExpiration_Expired() {
-        LocalDateTime expirationTime = LocalDateTime.now().minusDays(DAYS_TO_EXPIRE);
-        ResponseEntity<Boolean> responseEntity = timeManagerController.checkExpiration(expirationTime);
+        ResponseEntity<String> responseEntitySet = timeManagerController.setExpirationDate(LocalDateTime.now().minusDays(DAYS_TO_EXPIRE));
+        assertEquals(HttpStatus.OK, responseEntitySet.getStatusCode());
+
+        ResponseEntity<String> responseEntity = timeManagerController.checkExpiration();
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        assertEquals(true, responseEntity.getBody());
+        assertEquals("check expiration date: true", responseEntity.getBody());
     }
 }
