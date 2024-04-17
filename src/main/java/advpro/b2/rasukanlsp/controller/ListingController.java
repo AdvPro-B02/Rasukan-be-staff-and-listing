@@ -20,14 +20,14 @@ public class ListingController {
     }
 
     @PostMapping("/{id}/featured")
-    public ResponseEntity<Void> markListingAsFeatured(@PathVariable String id, @RequestParam boolean status) {
+    public ResponseEntity<String> markListingAsFeatured(@PathVariable String id, @RequestParam boolean status) {
         dummyListing.setFeaturedStatus(status);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.ok("Listing with ID " + id + " has been marked as featured");
     }
 
     @DeleteMapping("/{id}/featured")
-    public ResponseEntity<Void> removeFeaturedStatus(@PathVariable String id) {
+    public ResponseEntity<String> removeFeaturedStatus(@PathVariable String id) {
         dummyListing.setFeaturedStatus(false);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.ok("Featured status has been removed from listing with ID " + id);
     }
 }
