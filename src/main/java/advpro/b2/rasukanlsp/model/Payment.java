@@ -1,27 +1,26 @@
 package advpro.b2.rasukanlsp.model;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
-@Entity
-@Table(name = "payments")
+@Setter
 public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @Getter
     private String userId;
 
-//    @ManyToOne
-//    @JoinColumn(name = "order_id", referencedColumnName = "id")
     private String orderId;
 
-    @Column(name = "nominal", nullable = false)
     private Long nominal;
 
-    @Column(name = "payment_status", nullable = false)
     private String paymentStatus;
 
     public Payment() {}
@@ -32,14 +31,12 @@ public class Payment {
         this.orderId = orderId;
         this.nominal = nominal;
         this.paymentStatus = paymentStatus;
+
+        validateAttribute();
     }
 
     public String getId() {
         return id.toString();
-    }
-
-    public String getUserId() {
-        return userId;
     }
 
     public String getOrderId() {
@@ -52,5 +49,20 @@ public class Payment {
 
     public String getPaymentStatus() {
         return paymentStatus;
+    }
+
+    public void validateAttribute() {
+        if (userId == null || userId.isEmpty()) {
+            throw new IllegalArgumentException("User ID cannot be null or empty.");
+        }
+        if (orderId == null || orderId.isEmpty()) {
+            throw new IllegalArgumentException("Order ID cannot be null or empty.");
+        }
+        if (nominal == null) {
+            throw new IllegalArgumentException("Nominal cannot be null or empty.");
+        }
+        if (!paymentStatus.equals("PENDING") && !paymentStatus.equals("ACCEPTED") && !paymentStatus.equals("REJECTED")) {
+            throw new IllegalArgumentException("Invalid status.");
+        }
     }
 }
