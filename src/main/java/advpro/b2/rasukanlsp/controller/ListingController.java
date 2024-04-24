@@ -1,7 +1,7 @@
 package advpro.b2.rasukanlsp.controller;
 
 import advpro.b2.rasukanlsp.model.Listing;
-import advpro.b2.rasukanlsp.service.FeaturedListingService;
+import advpro.b2.rasukanlsp.service.FeaturedDecoratorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +14,9 @@ import java.util.Optional;
 @RequestMapping("/listing")
 public class ListingController {
 
-    private final FeaturedListingService listingService;
+    private final FeaturedDecoratorService listingService;
 
-    public ListingController(FeaturedListingService listingService) {
+    public ListingController(FeaturedDecoratorService listingService) {
         this.listingService = listingService;
     }
 

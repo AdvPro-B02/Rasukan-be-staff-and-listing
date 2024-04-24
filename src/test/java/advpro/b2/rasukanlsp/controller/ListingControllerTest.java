@@ -1,7 +1,7 @@
 package advpro.b2.rasukanlsp.controller;
 
 import advpro.b2.rasukanlsp.model.Listing;
-import advpro.b2.rasukanlsp.service.FeaturedListingService;
+import advpro.b2.rasukanlsp.service.FeaturedDecoratorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
 public class ListingControllerTest {
 
     @Mock
-    private FeaturedListingService listingService;
+    private FeaturedDecoratorService listingService;
 
     @InjectMocks
     private ListingController listingController;
