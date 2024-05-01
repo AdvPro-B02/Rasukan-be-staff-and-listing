@@ -3,36 +3,56 @@ package advpro.b2.rasukanlsp.repository;
 import advpro.b2.rasukanlsp.model.Listing;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.*;
 
 @Repository
 public class ListingRepository {
 
-    private final Map<String, Listing> listings = new HashMap<>();
+    private final List<Listing> listings = new ArrayList<>();
 
     public ListingRepository() {
+        LocalDate expirationDate = LocalDate.now().plusDays(7);
         // masih dummy data
-        Listing listing1 = new Listing("1", "user1", "Product 1", "Description of Product 1", false, null);
-        Listing listing2 = new Listing("2", "user2", "Product 2", "Description of Product 2", true, null);
-        Listing listing3 = new Listing("3", "user3", "Product 3", "Description of Product 3", false, null);
-        Listing listing4 = new Listing("4", "user4", "Product 4", "Description of Product 4", true, null);
+        Listing listing1 = new Listing(UUID.randomUUID(), "user1", "Product 1",  false, expirationDate);
+        Listing listing2 = new Listing(UUID.randomUUID(), "user2", "Product 2", true, expirationDate);
+        Listing listing3 = new Listing(UUID.randomUUID(), "user3", "Product 3",  false, expirationDate);
+        Listing listing4 = new Listing(UUID.randomUUID(), "user4", "Product 4", true, expirationDate);
+        Listing listing5 = new Listing(UUID.randomUUID(), "user1", "Product 1",  true, expirationDate);
 
-        listings.put(listing1.getId(), listing1);
-        listings.put(listing2.getId(), listing2);
-        listings.put(listing3.getId(), listing3);
-        listings.put(listing4.getId(), listing4);
+        listings.add(listing1);
+        listings.add(listing2);
+        listings.add(listing3);
+        listings.add(listing4);
+        listings.add(listing5);
     }
 
-    public Optional<Listing> findById(String id) {
-        return Optional.ofNullable(listings.get(id));
+    public Optional<Listing> findById(UUID id) {
+        return listings.stream()
+                .filter(listing -> listing.getId().equals(id))
+                .findFirst();
     }
 
     public Listing save(Listing listing) {
-        listings.put(listing.getId(), listing);
+        Optional<Listing> existingListing = findById(listing.getId());
+        if (existingListing.isPresent()) {
+            // Update existing listing
+            Listing existing = existingListing.get();
+            existing.setUserId(listing.getUserId());
+            existing.setName(listing.getName());
+            existing.setFeaturedStatus(listing.isFeaturedStatus());
+            existing.setExpirationDate(listing.getExpirationDate());
+            if (!listing.isFeaturedStatus()) {
+                existing.setExpirationDate(null);
+            }
+        } else {
+            // Add new listing
+            listings.add(listing);
+        }
         return listing;
     }
 
     public List<Listing> findAll() {
-        return new ArrayList<>(listings.values());
+        return new ArrayList<>(listings);
     }
 }

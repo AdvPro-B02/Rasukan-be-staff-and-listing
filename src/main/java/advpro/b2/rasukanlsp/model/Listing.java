@@ -4,29 +4,33 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
 public class Listing {
+
     @Id
-    private String id;
+    @GeneratedValue
+    private UUID id;
+
     private String userId;
     private String name;
-    private String description;
     private boolean featuredStatus;
     private LocalDate expirationDate;
 
     public Listing() {
+        this.id = UUID.randomUUID();
     }
 
-    public Listing(String id, String userId, String name, String description, boolean featuredStatus, LocalDate expirationDate) {
+    public Listing(UUID id, String userId, String name, boolean featuredStatus, LocalDate expirationDate) {
         this.id = id;
         this.userId = userId;
         this.name = name;
-        this.description = description;
         this.featuredStatus = featuredStatus;
         this.expirationDate = expirationDate;
     }
