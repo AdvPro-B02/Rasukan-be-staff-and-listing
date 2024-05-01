@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,7 +19,7 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
     private ListingRepository listingRepository;
 
     @Override
-    public Optional<Listing> getListingDetail(String id) {
+    public Optional<Listing> getListingDetail(UUID id) {
         Optional<Listing> optionalListing = listingRepository.findById(id);
         if (optionalListing.isPresent()) {
             Listing listing = optionalListing.get();
@@ -34,7 +35,7 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
     }
 
     @Override
-    public String markListingAsFeatured(String id, boolean status, LocalDate expirationDate) {
+    public String markListingAsFeatured(UUID id, boolean status, LocalDate expirationDate) {
         Optional<Listing> optionalListing = listingRepository.findById(id);
         if (optionalListing.isPresent()) {
             Listing listing = optionalListing.get();
@@ -48,7 +49,7 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
     }
 
     @Override
-    public String removeFeaturedStatus(String id) {
+    public String removeFeaturedStatus(UUID id) {
         Optional<Listing> optionalListing = listingRepository.findById(id);
         if (optionalListing.isPresent()) {
             Listing listing = optionalListing.get();
@@ -62,14 +63,11 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
     }
     public List<Listing> getAllListingsSortedByFeatured() {
         List<Listing> allListings = listingRepository.findAll();
-
         List<Listing> sortedListings = allListings.stream()
                 .sorted(Comparator.comparing(Listing::isFeaturedStatus).reversed())
                 .collect(Collectors.toList());
-
         return sortedListings;
     }
-
     @Override
     public void updateExpiredFeaturedStatus() {
         List<Listing> allListings = listingRepository.findAll();
@@ -81,5 +79,17 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
                 listingRepository.save(listing);
             }
         });
+    }
+
+    @Override
+    public List<Listing> getFeaturedListings() {
+        List<Listing> allListings = listingRepository.findAll();
+
+        List<Listing> featuredListings = allListings.stream()
+                .filter(Listing::isFeaturedStatus)
+                .sorted(Comparator.comparing(Listing::getExpirationDate).reversed())
+                .collect(Collectors.toList());
+
+        return featuredListings;
     }
 }

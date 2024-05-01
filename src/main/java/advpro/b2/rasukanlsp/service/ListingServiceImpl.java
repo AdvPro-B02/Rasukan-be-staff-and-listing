@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.Optional;
+import java.util.UUID;
 
 import advpro.b2.rasukanlsp.model.Listing;
 import advpro.b2.rasukanlsp.repository.ListingRepository;
@@ -16,7 +17,7 @@ public class ListingServiceImpl implements ListingService {
     private ListingRepository listingRepository;
 
     @Override
-    public Optional<Listing> getListingDetail(String id) {
+    public Optional<Listing> getListingDetail(UUID id) {
         Optional<Listing> optionalListing = listingRepository.findById(id);
         if (optionalListing.isPresent()) {
             Listing listing = optionalListing.get();
