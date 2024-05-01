@@ -9,9 +9,10 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 public class ListingServiceImplTest {
@@ -29,17 +30,16 @@ public class ListingServiceImplTest {
 
     @Test
     void testGetListingDetail() {
-        String id = "123";
+        UUID id = UUID.randomUUID();
         Listing listing = new Listing();
         listing.setId(id);
         listing.setUserId("user123");
         listing.setName("Test Listing");
-        listing.setDescription("Test Description");
         listing.setFeaturedStatus(true);
 
-        when(listingRepository.findById(anyString())).thenReturn(Optional.of(listing));
+        when(listingRepository.findById(any(UUID.class))).thenReturn(Optional.of(listing));
 
-        Optional<Listing> result = listingService.getListingDetail(id);
+        Optional<Listing> result = listingService.getListingDetail(UUID.fromString(id.toString()));
 
         assertEquals(Optional.of(listing), result);
     }
