@@ -3,11 +3,9 @@ package advpro.b2.rasukanlsp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import advpro.b2.rasukanlsp.repository.*;
-import advpro.b2.rasukanlsp.model.Payment;
-import advpro.b2.rasukanlsp.model.PaymentStatusChangeEvent;
+
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service

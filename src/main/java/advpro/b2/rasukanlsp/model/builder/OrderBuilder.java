@@ -33,6 +33,8 @@ public class PaymentBuilder {
         this.paymentStatus = paymentStatus;
     }
 
+    
+
     public void setPaymentNotes(String paymentNotes) {
         this.paymentNotes = paymentNotes;
     }

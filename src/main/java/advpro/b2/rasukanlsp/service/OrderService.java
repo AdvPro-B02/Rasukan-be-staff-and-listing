@@ -1,6 +1,5 @@
 package advpro.b2.rasukanlsp.service;
 
-import advpro.b2.rasukanlsp.model.Payment;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
