@@ -36,5 +36,4 @@ public class Listing {
             throw new RuntimeException(e);
         }
     }
-
 }
