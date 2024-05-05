@@ -1,49 +1,58 @@
 package advpro.b2.rasukanlsp.model.builder;
 
-import advpro.b2.rasukanlsp.model.Payment;
+import advpro.b2.rasukanlsp.model.Order;
+import advpro.b2.rasukanlsp.enums.OrderStatus;
+import advpro.b2.rasukanlsp.enums.PaymentStatus;
 
 import java.util.UUID;
 
-public class PaymentBuilder {
-    private UUID id;
+public class OrderBuilder {
     private UUID orderId;
     private UUID userId;
-    private Long nominal;
+    private int nominal;
+    private String orderStatus;
     private String paymentStatus;
-    private String paymentNotes;
-    private int discount;
+    private String notes;
+    private Integer discount;
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public void setOrderId(UUID orderId) {
-        this.orderId = orderId;
-    }
-
-    public void setUserId(UUID userId) {
+    public OrderBuilder(UUID userId, int nominal) {
         this.userId = userId;
+        this.nominal = nominal;
+        this.orderStatus = "WAITING_PAYMENT";
+        this.paymentStatus = "PENDING";
     }
 
-    public void setNominal(Long nominal) {
+    public OrderBuilder(UUID orderId, UUID userId, int nominal) {
+        this.orderId = orderId;
+        this.userId = userId;
         this.nominal = nominal;
     }
 
+    public void setOrderStatus(String orderStatus) {
+        if(OrderStatus.contains(orderStatus)){
+            this.orderStatus = orderStatus;
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
     public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
+        if(PaymentStatus.contains(paymentStatus)){
+            this.paymentStatus = paymentStatus;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
-    
-
-    public void setPaymentNotes(String paymentNotes) {
-        this.paymentNotes = paymentNotes;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
-    public void setDiscount(int discount) {
+    public void setDiscount(Integer discount) {
         this.discount = discount;
     }
 
-    public Payment build() {
-        return new Payment();
+    public Order build() {
+        return new Order(orderId, userId, nominal, orderStatus, paymentStatus, notes, discount);
     }
 }
