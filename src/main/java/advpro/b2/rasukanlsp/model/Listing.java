@@ -1,25 +1,39 @@
 package advpro.b2.rasukanlsp.model;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import java.time.LocalDate;
 
-@Getter
-@Setter
+import java.util.UUID;
+
+
+@Getter @Setter
 public class Listing {
-    private String id;
-    private String userId;
+    private UUID listingId;
     private String name;
-    private String description;
-    private boolean featuredStatus;
-    private LocalDate expirationDate;
+    private int price;
+    private int stock;
+    private UUID seller;
 
-    public Listing(String id, String userId, String name, String description, boolean featuredStatus, LocalDate expirationDate) {
-        this.id = id;
-        this.userId = userId;
+    public Listing(UUID listingId, String name, int stock, int price, UUID seller){
+        this.listingId = listingId;
         this.name = name;
-        this.description = description;
-        this.featuredStatus = featuredStatus;
-        this.expirationDate = expirationDate;
+        this.price = price;
+        this.stock = stock;
+        this.seller = seller;
+    }
+
+    public Listing() {}
+
+    @Override
+    public String toString() {
+        ObjectMapper om = new ObjectMapper();
+        try {
+            return om.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
