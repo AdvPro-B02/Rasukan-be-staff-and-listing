@@ -1,22 +1,19 @@
 package advpro.b2.rasukanlsp.service;
 
-import org.springframework.stereotype.Service;
+import advpro.b2.rasukanlsp.model.Listing;
+import advpro.b2.rasukanlsp.model.Order;
+import advpro.b2.rasukanlsp.model.builder.OrderBuilder;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
-@Service
-public interface PaymentService {
-    public Payment addPayment(UUID id, String userId, String orderId, Long nominal, String paymentStatus);
-    public Payment setStatus(String paymentId, String status);
-    public Payment getPayment(String paymentId);
-
-    void updatePaymentStatus(UUID paymentId, String newStatus);
-
-    Payment getPaymentById(UUID paymentId);
-
-    public List<Payment> getAllPayments();
-    public void deletePayment(String paymentId);
-
-    void deletePayment(UUID paymentId);
+public interface OrderService {
+    Order createOrder(OrderBuilder orderBuilder, Map<UUID, Integer> listings);
+    List<Order> getAllOrders();
+    Optional<Order> getOrderById(UUID orderId);
+    void deleteOrder(UUID orderId);
+    Order updateOrderStatus(UUID orderId, String newOrderStatus);
+    Order updatePaymentStatus(UUID orderId, String newPaymentStatus);
 }
