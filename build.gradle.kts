@@ -37,6 +37,15 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+tasks.register<Test>("unitTest"){
+    description = "Runs unit tests"
+    group = "verification"
+
+    filter{
+        excludeTestsMatching("*FunctionalTest")
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
     finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
