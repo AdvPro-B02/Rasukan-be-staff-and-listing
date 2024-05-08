@@ -3,9 +3,9 @@ package advpro.b2.rasukanlsp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.List;
 
 import advpro.b2.rasukanlsp.model.Listing;
 import advpro.b2.rasukanlsp.repository.ListingRepository;
@@ -18,17 +18,16 @@ public class ListingServiceImpl implements ListingService {
 
     @Override
     public Optional<Listing> getListingDetail(UUID id) {
-        Optional<Listing> optionalListing = listingRepository.findById(id);
-        if (optionalListing.isPresent()) {
-            Listing listing = optionalListing.get();
-            if (listing.isFeaturedStatus() && listing.getExpirationDate() != null && LocalDate.now().isAfter(listing.getExpirationDate())) {
-                listing.setFeaturedStatus(false);
-                listing.setExpirationDate(null);
-                listingRepository.save(listing);
-            }
-            return Optional.of(listing);
-        } else {
-            return Optional.empty();
-        }
+        return listingRepository.findById(id);
+    }
+
+    @Override
+    public void saveListing(Listing listing) {
+        listingRepository.save(listing);
+    }
+
+    @Override
+    public List<Listing> getAllListings() {
+        return listingRepository.findAll();
     }
 }
