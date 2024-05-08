@@ -1,11 +1,12 @@
 package advpro.b2.rasukanlsp.service;
 
 import advpro.b2.rasukanlsp.model.Listing;
-import advpro.b2.rasukanlsp.repository.ListingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -15,33 +16,33 @@ import java.util.stream.Collectors;
 @Service
 public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
 
-    @Autowired
-    private ListingRepository listingRepository;
-
+    private final ListingService listingService;
+    public FeaturedDecoratorServiceImpl(@Qualifier("listingServiceImpl") ListingService listingService) {
+        this.listingService = listingService;
+    }
     @Override
     public Optional<Listing> getListingDetail(UUID id) {
-        Optional<Listing> optionalListing = listingRepository.findById(id);
-        if (optionalListing.isPresent()) {
-            Listing listing = optionalListing.get();
-            if (listing.isFeaturedStatus() && listing.getExpirationDate() != null && LocalDate.now().isAfter(listing.getExpirationDate())) {
-                listing.setFeaturedStatus(false);
-                listing.setExpirationDate(null);
-                listingRepository.save(listing);
-            }
-            return Optional.of(listing);
-        } else {
-            return Optional.empty();
-        }
+        return listingService.getListingDetail(id);
+    }
+
+    @Override
+    public void saveListing(Listing listing) {
+        listingService.saveListing(listing);
+    }
+
+    @Override
+    public List<Listing> getAllListings() {
+        return listingService.getAllListings();
     }
 
     @Override
     public String markListingAsFeatured(UUID id, boolean status, LocalDate expirationDate) {
-        Optional<Listing> optionalListing = listingRepository.findById(id);
+        Optional<Listing> optionalListing = getListingDetail(id);
         if (optionalListing.isPresent()) {
             Listing listing = optionalListing.get();
             listing.setFeaturedStatus(status);
-            listing.setExpirationDate(expirationDate);
-            listingRepository.save(listing);
+            listing.setExpirationDate(status ? expirationDate : null);
+            saveListing(listing);
             return "Listing with ID " + id + " has been marked as featured";
         } else {
             return "Listing with ID " + id + " not found";
@@ -50,45 +51,77 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
 
     @Override
     public String removeFeaturedStatus(UUID id) {
-        Optional<Listing> optionalListing = listingRepository.findById(id);
+        Optional<Listing> optionalListing = getListingDetail(id);
         if (optionalListing.isPresent()) {
             Listing listing = optionalListing.get();
             listing.setFeaturedStatus(false);
             listing.setExpirationDate(null);
-            listingRepository.save(listing);
+            saveListing(listing);
             return "Featured status has been removed from listing with ID " + id;
         } else {
             return "Listing with ID " + id + " not found";
         }
     }
-    public List<Listing> getAllListingsSortedByFeatured() {
-        List<Listing> allListings = listingRepository.findAll();
-        List<Listing> sortedListings = allListings.stream()
-                .sorted(Comparator.comparing(Listing::isFeaturedStatus).reversed())
-                .collect(Collectors.toList());
-        return sortedListings;
-    }
+
     @Override
-    public void updateExpiredFeaturedStatus() {
-        List<Listing> allListings = listingRepository.findAll();
-        LocalDate currentDate = LocalDate.now();
+    public List<Listing> getAllListingsSortedByFeatured() {
+        List<Listing> allListings = getAllListings();
+
         allListings.forEach(listing -> {
-            if (listing.isFeaturedStatus() && listing.getExpirationDate() != null && currentDate.isAfter(listing.getExpirationDate())) {
+            if (!listing.isFeaturedStatus() || (listing.getExpirationDate() != null && LocalDate.now().isAfter(listing.getExpirationDate()))) {
                 listing.setFeaturedStatus(false);
                 listing.setExpirationDate(null);
-                listingRepository.save(listing);
+                saveListing(listing);
+            }
+        });
+
+        List<Listing> sortedTrueListings = allListings.stream()
+                .filter(Listing::isFeaturedStatus)
+                .sorted(Comparator.comparing(Listing::getExpirationDate, Comparator.nullsLast(Comparator.naturalOrder())).reversed())
+                .collect(Collectors.toList());
+
+        List<Listing> falseListings = allListings.stream()
+                .filter(listing -> !listing.isFeaturedStatus())
+                .toList();
+
+        sortedTrueListings.addAll(falseListings);
+
+        return sortedTrueListings;
+    }
+
+    @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
+    @Override
+    public void updateExpiredFeaturedStatus() {
+        List<Listing> allListings = getAllListings();
+        LocalDate currentDate = LocalDate.now();
+        allListings.forEach(listing -> {
+            if (listing.isFeaturedStatus() && listing.getExpirationDate() != null) {
+                long days = ChronoUnit.DAYS.between(listing.getExpirationDate(), currentDate);
+                if (days >= 7) {
+                    listing.setFeaturedStatus(false);
+                    listing.setExpirationDate(null);
+                    saveListing(listing);
+                }
             }
         });
     }
 
     @Override
     public List<Listing> getFeaturedListings() {
-        List<Listing> allListings = listingRepository.findAll();
+        List<Listing> allListings = getAllListings();
+        allListings.forEach(listing -> {
+            if (listing.isFeaturedStatus() && listing.getExpirationDate() != null && LocalDate.now().isAfter(listing.getExpirationDate())) {
+                listing.setFeaturedStatus(false);
+                listing.setExpirationDate(null);
+                saveListing(listing);
+            }
+        });
 
         List<Listing> featuredListings = allListings.stream()
                 .filter(Listing::isFeaturedStatus)
-                .sorted(Comparator.comparing(Listing::getExpirationDate).reversed())
                 .collect(Collectors.toList());
+
+        featuredListings.sort(Comparator.comparing(Listing::getExpirationDate, Comparator.nullsLast(Comparator.naturalOrder())).reversed());
 
         return featuredListings;
     }
