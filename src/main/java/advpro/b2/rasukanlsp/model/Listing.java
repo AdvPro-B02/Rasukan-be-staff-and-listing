@@ -34,4 +34,12 @@ public class Listing {
         this.featuredStatus = featuredStatus;
         this.expirationDate = expirationDate;
     }
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                "\nUser ID: " + userId +
+                "\nName: " + name +
+                "\nFeatured: " + featuredStatus +
+                "\nExpiration Date: " + expirationDate;
+    }
 }
