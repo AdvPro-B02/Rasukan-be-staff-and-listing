@@ -10,7 +10,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.UUID;
 import java.util.List;
-import java.util.Arrays;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
