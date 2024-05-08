@@ -8,34 +8,32 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/listing")
 public class ListingController {
 
-    private final FeaturedDecoratorService listingService;
+    private final FeaturedDecoratorService featuredService;
 
-    public ListingController(FeaturedDecoratorService listingService) {
-        this.listingService = listingService;
+    public ListingController(FeaturedDecoratorService featuredService) {
+        this.featuredService = featuredService;
     }
 
     @GetMapping("/{id}")
-    public String getListingDetail(@PathVariable UUID id) {
-        listingService.updateExpiredFeaturedStatus();
-        Optional<Listing> optionalListing = listingService.getListingDetail(id);
-        if (optionalListing.isPresent()) {
-            Listing listing = optionalListing.get();
-            return "ID: " + listing.getId() + ", User ID: " + listing.getUserId() + ", Name: " + listing.getName() + ", Featured: " + listing.isFeaturedStatus();
+    public ResponseEntity<Listing> getListingDetail(@PathVariable UUID id) {
+        Listing listing = featuredService.getListingDetail(id).orElse(null);
+        if (listing != null) {
+            return ResponseEntity.ok(listing);
         } else {
-            return "Listing with ID " + id + " not found";
+            return ResponseEntity.notFound().build();
         }
     }
 
+
     @PostMapping("/{id}/featured")
     public ResponseEntity<String> markListingAsFeatured(@PathVariable UUID id, @RequestParam boolean status) {
-        String result = listingService.markListingAsFeatured(id, status, LocalDate.now().plusDays(7));
+        String result = featuredService.markListingAsFeatured(id, status, LocalDate.now().plusDays(7));
         if (result != null) {
             return ResponseEntity.ok(result);
         } else {
@@ -45,22 +43,23 @@ public class ListingController {
 
     @DeleteMapping("/{id}/featured")
     public ResponseEntity<String> removeFeaturedStatus(@PathVariable UUID id) {
-        String result = listingService.removeFeaturedStatus(id);
+        String result = featuredService.removeFeaturedStatus(id);
         if (result != null) {
             return ResponseEntity.ok(result);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
         }
     }
+
     @GetMapping("/sorted")
     public ResponseEntity<List<Listing>> getAllListingsSortedByFeatured() {
-        List<Listing> sortedListings = listingService.getAllListingsSortedByFeatured();
+        List<Listing> sortedListings = featuredService.getAllListingsSortedByFeatured();
         return ResponseEntity.ok(sortedListings);
     }
 
     @GetMapping("/featured")
     public ResponseEntity<List<Listing>> getFeaturedListings() {
-        List<Listing> featuredListings = listingService.getFeaturedListings();
+        List<Listing> featuredListings = featuredService.getFeaturedListings();
         return ResponseEntity.ok(featuredListings);
     }
 }
