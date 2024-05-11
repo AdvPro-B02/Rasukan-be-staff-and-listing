@@ -1,4 +1,5 @@
 package advpro.b2.rasukanlsp.dto;
+import java.sql.Date;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,12 +14,18 @@ public class ListingDTO {
     private int price;
     private UUID seller;
     private int quantity;
+    private int orderCounter;
+    private Date expiredDate;
+    private boolean featuredListing;
 
-    public ListingDTO(UUID listingId, String name, int price, UUID seller, int quantity) {
+    public ListingDTO(UUID listingId, String name, int price, UUID seller, int quantity, int orderCounter, Date expiredDate, boolean featuredListing) {
         this.listingId = listingId;
         this.name = name;
         this.price = price;
         this.seller = seller;
         this.quantity = quantity;
+        this.orderCounter = orderCounter;
+        this.expiredDate = expiredDate;
+        this.featuredListing = featuredListing;
     }
 }
