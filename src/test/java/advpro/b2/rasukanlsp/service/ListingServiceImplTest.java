@@ -1,14 +1,13 @@
 package advpro.b2.rasukanlsp.service;
 
-import advpro.b2.rasukanlsp.model.Listing;
-import advpro.b2.rasukanlsp.repository.ListingRepository;
+import advpro.b2.rasukanlsp.model.FeaturedListing;
+import advpro.b2.rasukanlsp.repository.FeaturedListingRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,12 +15,12 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 public class ListingServiceImplTest {
 
     @Mock
-    private ListingRepository listingRepository;
+    private FeaturedListingRepository featuredListingRepository;
 
     @InjectMocks
     private ListingServiceImpl listingService;
@@ -34,15 +33,14 @@ public class ListingServiceImplTest {
     @Test
     void testGetListingDetail_HappyPath() {
         UUID id = UUID.randomUUID();
-        Listing listing = new Listing();
-        listing.setId(id);
-        listing.setUserId("user123");
+        FeaturedListing listing = new FeaturedListing();
+        listing.setListingId(id);
         listing.setName("Test Listing");
         listing.setFeaturedStatus(true);
 
-        when(listingRepository.findById(any(UUID.class))).thenReturn(Optional.of(listing));
+        when(featuredListingRepository.findById(any(UUID.class))).thenReturn(Optional.of(listing));
 
-        Optional<Listing> result = listingService.getListingDetail(id);
+        Optional<FeaturedListing> result = listingService.getListingDetail(id);
 
         assertTrue(result.isPresent());
         assertEquals(listing, result.get());
@@ -52,36 +50,35 @@ public class ListingServiceImplTest {
     void testGetListingDetail_ListingNotFound() {
         UUID id = UUID.randomUUID();
 
-        when(listingRepository.findById(any(UUID.class))).thenReturn(Optional.empty());
+        when(featuredListingRepository.findById(any(UUID.class))).thenReturn(Optional.empty());
 
-        Optional<Listing> result = listingService.getListingDetail(id);
+        Optional<FeaturedListing> result = listingService.getListingDetail(id);
 
         assertFalse(result.isPresent());
     }
 
     @Test
     void testSaveListing() {
-        Listing listing = new Listing();
-        listing.setId(UUID.randomUUID());
-        listing.setUserId("user123");
+        FeaturedListing listing = new FeaturedListing();
+        listing.setListingId(UUID.randomUUID());
         listing.setName("Test Listing");
         listing.setFeaturedStatus(true);
 
-        when(listingRepository.save(any(Listing.class))).thenReturn(listing);
+        when(featuredListingRepository.save(any(FeaturedListing.class))).thenReturn(listing);
 
         listingService.saveListing(listing);
     }
 
     @Test
     void testGetAllListings_HappyPath() {
-        List<Listing> listings = new ArrayList<>();
-        listings.add(new Listing(UUID.randomUUID(), "user1", "Listing 1", true, LocalDate.now()));
-        listings.add(new Listing(UUID.randomUUID(), "user2", "Listing 2", true, LocalDate.now()));
-        listings.add(new Listing(UUID.randomUUID(), "user3", "Listing 3", true, LocalDate.now()));
+        List<FeaturedListing> listings = new ArrayList<>();
+        listings.add(new FeaturedListing(UUID.randomUUID(),  "Listing 1", true, null));
+        listings.add(new FeaturedListing(UUID.randomUUID(), "Listing 2", true, null));
+        listings.add(new FeaturedListing(UUID.randomUUID(),  "Listing 3", true, null));
 
-        when(listingRepository.findAll()).thenReturn(listings);
+        when(featuredListingRepository.findAll()).thenReturn(listings);
 
-        List<Listing> result = listingService.getAllListings();
+        List<FeaturedListing> result = listingService.getAllListings();
 
         assertEquals(3, result.size());
         assertTrue(result.containsAll(listings));
@@ -89,9 +86,9 @@ public class ListingServiceImplTest {
 
     @Test
     void testGetAllListings_EmptyList() {
-        when(listingRepository.findAll()).thenReturn(new ArrayList<>());
+        when(featuredListingRepository.findAll()).thenReturn(new ArrayList<>());
 
-        List<Listing> result = listingService.getAllListings();
+        List<FeaturedListing> result = listingService.getAllListings();
 
         assertTrue(result.isEmpty());
     }
