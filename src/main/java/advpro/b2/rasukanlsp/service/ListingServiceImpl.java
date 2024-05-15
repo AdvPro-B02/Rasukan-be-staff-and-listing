@@ -1,5 +1,7 @@
 package advpro.b2.rasukanlsp.service;
 
+import advpro.b2.rasukanlsp.model.FeaturedListing;
+import advpro.b2.rasukanlsp.repository.FeaturedListingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,27 +9,25 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.List;
 
-import advpro.b2.rasukanlsp.model.Listing;
-import advpro.b2.rasukanlsp.repository.ListingRepository;
 
 @Service
 public class ListingServiceImpl implements ListingService {
 
     @Autowired
-    private ListingRepository listingRepository;
+    private FeaturedListingRepository featuredListingRepository;
 
     @Override
-    public Optional<Listing> getListingDetail(UUID id) {
-        return listingRepository.findById(id);
+    public Optional<FeaturedListing> getListingDetail(UUID id) {
+        return featuredListingRepository.findById(id);
     }
 
     @Override
-    public void saveListing(Listing listing) {
-        listingRepository.save(listing);
+    public void saveListing(FeaturedListing listing) {
+        featuredListingRepository.save(listing);
     }
 
     @Override
-    public List<Listing> getAllListings() {
-        return listingRepository.findAll();
+    public List<FeaturedListing> getAllListings() {
+        return featuredListingRepository.findAll();
     }
 }
