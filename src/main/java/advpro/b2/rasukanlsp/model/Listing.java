@@ -1,45 +1,47 @@
 package advpro.b2.rasukanlsp.model;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.UUID;
 
-@Getter
-@Setter
-@Entity
+
+@Getter @Setter
 public class Listing {
-
-    @Id
-    @GeneratedValue
-    private UUID id;
-
-    private String userId;
+    private UUID listingId;
     private String name;
-    private boolean featuredStatus;
+    private int price;
+    private int stock;
+    private UUID seller;
+    private int orderCounter;
     private LocalDate expirationDate;
+    private boolean featuredStatus;
 
-    public Listing() {
-        this.id = UUID.randomUUID();
-    }
-
-    public Listing(UUID id, String userId, String name, boolean featuredStatus, LocalDate expirationDate) {
-        this.id = id;
-        this.userId = userId;
+    public Listing(UUID listingId, String name, int stock, int price, UUID seller, int orderCounter, LocalDate expirationDate, boolean featuredStatus){
+        this.listingId = listingId;
         this.name = name;
-        this.featuredStatus = featuredStatus;
+        this.price = price;
+        this.stock = stock;
+        this.seller = seller;
+        this.orderCounter = orderCounter;
         this.expirationDate = expirationDate;
+        this.featuredStatus = featuredStatus;
     }
+
+    public Listing() {}
+
     @Override
     public String toString() {
-        return "ID: " + id +
-                "\nUser ID: " + userId +
-                "\nName: " + name +
-                "\nFeatured: " + featuredStatus +
-                "\nExpiration Date: " + expirationDate;
+        ObjectMapper om = new ObjectMapper();
+        try {
+            return om.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
