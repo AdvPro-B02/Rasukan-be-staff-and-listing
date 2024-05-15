@@ -75,10 +75,14 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
     @Override
     public String markListingAsFeatured(UUID listingId, boolean status, LocalDate expirationDate) {
         Listing supabaseListing = fetchListingDetail(listingId.toString());
+
         if (supabaseListing != null) {
-            FeaturedListing featuredListing = new FeaturedListing(supabaseListing.getListingId(), supabaseListing.getName(), supabaseListing.isFeaturedStatus(), supabaseListing.getExpirationDate());
-            featuredListing.setFeaturedStatus(status);
-            featuredListing.setExpirationDate(status ? expirationDate : null);
+            FeaturedListing featuredListing = new FeaturedListing(
+                    supabaseListing.getListingId(),
+                    supabaseListing.getName(),
+                    status,
+                    status ? expirationDate : null
+            );
             saveListing(featuredListing);
             return "Listing with ID " + listingId + " has been marked as featured";
         } else {
@@ -86,21 +90,24 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
         }
     }
 
-
     @Override
     public String removeFeaturedStatus(UUID listingId, boolean status, LocalDate expirationDate) {
         Listing supabaseListing = fetchListingDetail(String.valueOf(listingId));
 
         if (supabaseListing != null) {
-            FeaturedListing featuredListing = new FeaturedListing(supabaseListing.getListingId(), supabaseListing.getName(), supabaseListing.isFeaturedStatus(), supabaseListing.getExpirationDate());
-            featuredListing.setFeaturedStatus(false);
-            featuredListing.setExpirationDate(null);
+            FeaturedListing featuredListing = new FeaturedListing(
+                    supabaseListing.getListingId(),
+                    supabaseListing.getName(),
+                    false,
+                    null
+            );
             saveListing(featuredListing);
             return "Featured status has been removed from listing with ID " + listingId;
         } else {
             return "Listing with ID " + listingId + " not found";
         }
     }
+
 
     @Override
     public List<FeaturedListing> getAllListingsSortedByFeatured() {
