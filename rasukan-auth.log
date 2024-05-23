@@ -169,3 +169,34 @@ org.springframework.web.client.HttpServerErrorException$InternalServerError: 500
 2024-05-15T20:35:17.152+07:00  INFO 72010 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-15T20:35:17.219+07:00  INFO 72010 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-05-15T20:35:17.227+07:00  INFO 72010 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-15T20:44:51.302+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 75018 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-15T20:44:51.306+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-15T20:44:51.431+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-15T20:44:51.432+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-15T20:44:52.358+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-15T20:44:52.438+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 2 JPA repository interfaces.
+2024-05-15T20:44:53.208+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-15T20:44:53.228+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-15T20:44:53.228+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-15T20:44:53.289+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-15T20:44:53.289+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1857 ms
+2024-05-15T20:44:53.491+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-15T20:44:53.594+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-15T20:44:53.654+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-15T20:44:54.093+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-15T20:44:54.142+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-15T20:44:54.340+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@16bdad49
+2024-05-15T20:44:54.344+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-15T20:44:54.457+07:00  WARN 75018 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-15T20:44:55.761+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-15T20:44:55.984+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-15T20:44:56.506+07:00  WARN 75018 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-15T20:44:56.974+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-15T20:44:57.014+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-15T20:44:57.023+07:00  INFO 75018 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 6.35 seconds (process running for 8.77)
+2024-05-15T20:45:11.499+07:00  INFO 75018 --- [RasukanAuth] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-15T20:45:11.499+07:00  INFO 75018 --- [RasukanAuth] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-15T20:45:11.501+07:00  INFO 75018 --- [RasukanAuth] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-15T20:55:10.578+07:00  INFO 75018 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-15T20:55:10.601+07:00  INFO 75018 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-15T20:55:10.608+07:00  INFO 75018 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
