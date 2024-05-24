@@ -10,12 +10,19 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
+@Table(name = "featured_listings")
 public class FeaturedListing {
 
     @Id
     private UUID listingId;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "featured_status", nullable = false)
     private boolean featuredStatus;
+
+    @Column(name = "expiration_date", nullable = false)
     private LocalDate expirationDate;
 
     public FeaturedListing() {

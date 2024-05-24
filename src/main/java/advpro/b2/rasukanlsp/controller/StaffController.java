@@ -47,6 +47,8 @@ public class StaffController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Listing with ID " + id + " not found");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }
 
@@ -60,6 +62,8 @@ public class StaffController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Listing with ID " + id + " not found");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }
 
