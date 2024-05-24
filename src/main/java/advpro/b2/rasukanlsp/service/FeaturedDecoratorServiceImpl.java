@@ -1,4 +1,6 @@
 package advpro.b2.rasukanlsp.service;
+import advpro.b2.rasukanlsp.repository.FeaturedListingRepository;
+
 
 import advpro.b2.rasukanlsp.model.FeaturedListing;
 import advpro.b2.rasukanlsp.model.Listing;
@@ -55,8 +57,6 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
         }
     }
 
-
-
     @Override
     public Optional<FeaturedListing> getListingDetail(UUID listingId) {
         return listingService.getListingDetail(listingId);
@@ -73,15 +73,20 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
     }
 
     @Override
-    public String markListingAsFeatured(UUID listingId, boolean status, LocalDate expirationDate) {
+    public void removeListingById(UUID listingId) {
+        listingService.removeListingById(listingId);
+    }
+
+    @Override
+    public String markListingAsFeatured(UUID listingId) {
         Listing supabaseListing = fetchListingDetail(listingId.toString());
 
         if (supabaseListing != null) {
             FeaturedListing featuredListing = new FeaturedListing(
                     supabaseListing.getListingId(),
                     supabaseListing.getName(),
-                    status,
-                    status ? expirationDate : null
+                    true,
+                    LocalDate.now().plusDays(7)
             );
             saveListing(featuredListing);
             return "Listing with ID " + listingId + " has been marked as featured";
@@ -90,51 +95,19 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
         }
     }
 
-    @Override
-    public String removeFeaturedStatus(UUID listingId, boolean status, LocalDate expirationDate) {
-        Listing supabaseListing = fetchListingDetail(String.valueOf(listingId));
 
-        if (supabaseListing != null) {
-            FeaturedListing featuredListing = new FeaturedListing(
-                    supabaseListing.getListingId(),
-                    supabaseListing.getName(),
-                    false,
-                    null
-            );
-            saveListing(featuredListing);
+    @Override
+    public String removeFeaturedStatus(UUID listingId) {
+        Optional<FeaturedListing> optionalFeaturedListing = getListingDetail(listingId);
+
+        if (optionalFeaturedListing.isPresent()) {
+            removeListingById(listingId);
             return "Featured status has been removed from listing with ID " + listingId;
         } else {
             return "Listing with ID " + listingId + " not found";
         }
     }
 
-
-    @Override
-    public List<FeaturedListing> getAllListingsSortedByFeatured() {
-
-        List<FeaturedListing> allListings = getAllListings();
-//        System.out.println(allListings);
-        allListings.forEach(listing -> {
-            if (!listing.isFeaturedStatus() || (listing.getExpirationDate() != null && LocalDate.now().isAfter(listing.getExpirationDate()))) {
-                listing.setFeaturedStatus(false);
-                listing.setExpirationDate(null);
-                saveListing(listing);
-            }
-        });
-
-        List<FeaturedListing> sortedTrueListings = allListings.stream()
-                .filter(FeaturedListing::isFeaturedStatus)
-                .sorted(Comparator.comparing(FeaturedListing::getExpirationDate, Comparator.nullsLast(Comparator.naturalOrder())).reversed())
-                .collect(Collectors.toList());
-
-        List<FeaturedListing> falseListings = allListings.stream()
-                .filter(listing -> !listing.isFeaturedStatus())
-                .toList();
-
-        sortedTrueListings.addAll(falseListings);
-
-        return sortedTrueListings;
-    }
 
     @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
     @Override

@@ -11,5 +11,5 @@ public interface ListingService {
     void saveListing(FeaturedListing listing);
     List<FeaturedListing> getAllListings();
 
-
+    void removeListingById(UUID listingId);
 }

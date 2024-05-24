@@ -30,4 +30,9 @@ public class ListingServiceImpl implements ListingService {
     public List<FeaturedListing> getAllListings() {
         return featuredListingRepository.findAll();
     }
+
+    @Override
+    public void removeListingById(UUID listingId) {
+        featuredListingRepository.deleteById(listingId);
+    }
 }
