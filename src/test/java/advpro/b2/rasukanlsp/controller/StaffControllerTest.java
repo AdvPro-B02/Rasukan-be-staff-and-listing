@@ -18,7 +18,7 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
 public class StaffControllerTest {
-
+//
 //    @Mock
 //    private FeaturedDecoratorService featuredService;
 //
@@ -64,10 +64,10 @@ public class StaffControllerTest {
 //    @Test
 //    public void testMarkListingAsFeatured_Success() {
 //        UUID id = listings.keySet().iterator().next();
-//        when(featuredService.markListingAsFeatured(eq(id), eq(true), any(LocalDate.class)))
+//        when(featuredService.markListingAsFeatured(eq(id)))
 //                .thenReturn("Listing with ID " + id + " has been marked as featured");
 //
-//        ResponseEntity<String> responseEntity = listingController.markListingAsFeatured(id.toString(), true);
+//        ResponseEntity<String> responseEntity = listingController.markListingAsFeatured(id.toString());
 //
 //        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
 //        assertEquals("Listing with ID " + id + " has been marked as featured", responseEntity.getBody());
@@ -76,10 +76,10 @@ public class StaffControllerTest {
 //    @Test
 //    public void testMarkListingAsFeatured_ListingNotFound() {
 //        UUID id = UUID.randomUUID();
-//        when(featuredService.markListingAsFeatured(any(UUID.class), anyBoolean(), any(LocalDate.class)))
+//        when(featuredService.markListingAsFeatured(any(UUID.class)))
 //                .thenReturn(null);
 //
-//        ResponseEntity<String> responseEntity = listingController.markListingAsFeatured(id.toString(), true);
+//        ResponseEntity<String> responseEntity = listingController.markListingAsFeatured(id.toString());
 //
 //        assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
 //        assertEquals("Listing with ID " + id + " not found", responseEntity.getBody());
@@ -90,10 +90,10 @@ public class StaffControllerTest {
 //        UUID id = listings.keySet().iterator().next();
 //        FeaturedListing listing = listings.get(id);
 //        listing.setFeaturedStatus(true);
-//        when(featuredService.removeFeaturedStatus(id, false, null))
+//        when(featuredService.removeFeaturedStatus(id))
 //                .thenReturn("Featured status has been removed from listing with ID " + id);
 //
-//        ResponseEntity<String> responseEntity = listingController.removeFeaturedStatus(id.toString(), true, null);
+//        ResponseEntity<String> responseEntity = listingController.removeFeaturedStatus(id.toString());
 //
 //        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
 //        assertEquals("Featured status has been removed from listing with ID " + id, responseEntity.getBody());
@@ -102,30 +102,13 @@ public class StaffControllerTest {
 //    @Test
 //    public void testRemoveFeaturedStatus_ListingNotFound() {
 //        UUID id = UUID.randomUUID();
-//        when(featuredService.removeFeaturedStatus(any(UUID.class), false, null))
+//        when(featuredService.removeFeaturedStatus(any(UUID.class)))
 //                .thenReturn(null);
 //
-//        ResponseEntity<String> responseEntity = listingController.removeFeaturedStatus(id.toString(), false, null);
+//        ResponseEntity<String> responseEntity = listingController.removeFeaturedStatus(id.toString());
 //
 //        assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
 //        assertEquals("Listing with ID " + id + " not found", responseEntity.getBody());
 //    }
-//
-//    @Test
-//    public void testGetAllListingsSortedByFeatured() {
-//        LocalDate currentDate = LocalDate.now();
-//
-//        FeaturedListing featuredListing1 = new FeaturedListing(UUID.randomUUID(), "Listing 1", true, currentDate.plusDays(5));
-//        FeaturedListing featuredListing2 = new FeaturedListing(UUID.randomUUID(), "Listing 3", true, currentDate.plusDays(3));
-//
-//        FeaturedListing nonFeaturedListing = new FeaturedListing(UUID.randomUUID(),  "Listing 2", true, currentDate.minusDays(8));
-//
-//        List<FeaturedListing> sortedListings = Arrays.asList(featuredListing1, nonFeaturedListing, featuredListing2);
-//        when(featuredService.getAllListingsSortedByFeatured()).thenReturn(sortedListings);
-//
-//        ResponseEntity<List<FeaturedListing>> responseEntity = listingController.getAllListingsSortedByFeatured();
-//
-//        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-//        assertEquals(sortedListings, responseEntity.getBody());
-//    }
+
 }

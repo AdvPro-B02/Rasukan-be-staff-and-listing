@@ -36,42 +36,30 @@ public class StaffController {
         }
     }
 
-
     @PostMapping("/listing/{id}/featured")
-    public ResponseEntity<String> markListingAsFeatured(@PathVariable String id, @RequestParam boolean status) {
+    public ResponseEntity<String> markListingAsFeatured(@PathVariable String id) {
         try {
             UUID listingId = UUID.fromString(id);
-            String result = featuredService.markListingAsFeatured(listingId, status, LocalDate.now().plusDays(7));
+            String result = featuredService.markListingAsFeatured(listingId);
             return ResponseEntity.ok(result);
         } catch (HttpClientErrorException.NotFound e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Listing with ID " + id + " not found");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }
 
     @DeleteMapping("/listing/{id}/featured")
-    public ResponseEntity<String> removeFeaturedStatus(@PathVariable String id, boolean status, LocalDate expirationDate) {
+    public ResponseEntity<String> removeFeaturedStatus(@PathVariable String id) {
         try {
             UUID listingId = UUID.fromString(id);
-            String result = featuredService.removeFeaturedStatus(listingId,  status, expirationDate);
+            String result = featuredService.removeFeaturedStatus(listingId);
             return ResponseEntity.ok(result);
         } catch (HttpClientErrorException.NotFound e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Listing with ID " + id + " not found");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
-    }
-
-
-    @GetMapping("/listing/sorted")
-    public ResponseEntity<List<FeaturedListing>> getAllListingsSortedByFeatured() {
-        List<FeaturedListing> sortedListings = featuredService.getAllListingsSortedByFeatured();
-        return ResponseEntity.ok(sortedListings);
     }
 
     @GetMapping("/listing/featured")
