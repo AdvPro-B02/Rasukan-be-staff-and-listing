@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-      - staging
-      - dev
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -36,4 +34,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonar --info
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build sonar --info
