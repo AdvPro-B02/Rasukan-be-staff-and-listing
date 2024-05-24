@@ -128,3 +128,31 @@
 2024-05-24T15:37:12.781+07:00  INFO 32929 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-24T15:37:13.271+07:00  INFO 32929 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-05-24T15:37:13.277+07:00  INFO 32929 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-24T15:44:06.686+07:00  INFO 34631 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : Starting RasukanLSPApplicationTests using Java 21.0.2 with PID 34631 (started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-24T15:44:06.689+07:00  INFO 34631 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : The following 1 profile is active: "dev"
+2024-05-24T15:44:08.284+07:00  INFO 34631 --- [RasukanAuth] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24T15:44:08.374+07:00  INFO 34631 --- [RasukanAuth] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 3 JPA repository interfaces.
+2024-05-24T15:44:09.369+07:00  INFO 34631 --- [RasukanAuth] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-24T15:44:09.466+07:00  INFO 34631 --- [RasukanAuth] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-24T15:44:09.524+07:00  INFO 34631 --- [RasukanAuth] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-24T15:44:09.898+07:00  INFO 34631 --- [RasukanAuth] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24T15:44:09.949+07:00  INFO 34631 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-24T15:44:10.180+07:00  INFO 34631 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f33b8fc
+2024-05-24T15:44:10.182+07:00  INFO 34631 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-24T15:44:10.250+07:00  WARN 34631 --- [RasukanAuth] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-24T15:44:11.919+07:00  INFO 34631 --- [RasukanAuth] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-24T15:44:11.964+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-24T15:44:11.965+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-24T15:44:11.967+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-24T15:44:11.968+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-24T15:44:11.969+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-24T15:44:11.969+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-24T15:44:11.971+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-24T15:44:11.972+07:00  WARN 34631 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-24T15:44:12.057+07:00  INFO 34631 --- [RasukanAuth] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24T15:44:13.472+07:00  WARN 34631 --- [RasukanAuth] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-24T15:44:14.873+07:00  INFO 34631 --- [RasukanAuth] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoint(s) beneath base path '/actuator'
+2024-05-24T15:44:15.160+07:00  INFO 34631 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : Started RasukanLSPApplicationTests in 8.926 seconds (process running for 11.372)
+2024-05-24T15:44:16.917+07:00  INFO 34631 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24T15:44:17.379+07:00  INFO 34631 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-24T15:44:17.385+07:00  INFO 34631 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

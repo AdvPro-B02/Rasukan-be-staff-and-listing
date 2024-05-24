@@ -6,6 +6,14 @@ plugins {
     id("org.sonarqube") version "4.4.1.3373"
 }
 
+sonar {
+    properties {
+        property("sonar.projectKey", "adprob2_Rasukan-be-staff-listing-payment")
+        property("sonar.organization", "adprob2")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
+}
+
 group = "advpro.b2"
 version = "0.0.1-SNAPSHOT"
 
@@ -65,13 +73,5 @@ tasks.jacocoTestReport {
         xml.required.set(false)
         csv.required.set(false)
         html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
-    }
-}
-
-sonar {
-    properties {
-        property("sonar.projectKey", "adprob2_Rasukan-be-staff-listing-payment")
-        property("sonar.organization", "adprob2")
-        property("sonar.java.binaries", ".")
     }
 }
