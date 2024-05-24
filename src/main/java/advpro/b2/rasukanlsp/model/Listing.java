@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 
@@ -18,18 +19,18 @@ public class Listing {
     private int stock;
     private UUID seller;
     private int orderCounter;
-    private Date expiredDate;
-    private boolean featuredListing;
+    private LocalDate expirationDate;
+    private boolean featuredStatus;
 
-    public Listing(UUID listingId, String name, int stock, int price, UUID seller, int orderCounter, Date expiredDate, boolean featuredListing){
+    public Listing(UUID listingId, String name, int stock, int price, UUID seller, int orderCounter, LocalDate expirationDate, boolean featuredStatus){
         this.listingId = listingId;
         this.name = name;
         this.price = price;
         this.stock = stock;
         this.seller = seller;
         this.orderCounter = orderCounter;
-        this.expiredDate = expiredDate;
-        this.featuredListing = featuredListing;
+        this.expirationDate = expirationDate;
+        this.featuredStatus = featuredStatus;
     }
 
     public Listing() {}

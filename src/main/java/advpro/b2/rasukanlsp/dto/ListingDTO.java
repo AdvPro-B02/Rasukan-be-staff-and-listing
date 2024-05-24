@@ -4,6 +4,7 @@ import java.sql.Date;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -15,10 +16,10 @@ public class ListingDTO {
     private UUID seller;
     private int quantity;
     private int orderCounter;
-    private Date expiredDate;
+    private LocalDate expiredDate;
     private boolean featuredListing;
 
-    public ListingDTO(UUID listingId, String name, int price, UUID seller, int quantity, int orderCounter, Date expiredDate, boolean featuredListing) {
+    public ListingDTO(UUID listingId, String name, int price, UUID seller, int quantity, int orderCounter, LocalDate expiredDate, boolean featuredListing) {
         this.listingId = listingId;
         this.name = name;
         this.price = price;
