@@ -15,7 +15,8 @@ import java.util.*;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    private final String AUTH_API_BASE_URL = "http://34.87.180.11/Buyer/listing/get/";
+    private final String LISTING_API_BASE_URL = "http://34.87.180.11/";
+    private final String AUTH_API_BASE_URL = "http://35.197.147.171/";
     private RestTemplate restTemplate;
     private ListingToOrderService listingToOrderService;
 
@@ -23,7 +24,7 @@ public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
 
     @Autowired
-    public OrderServiceImpl(ListingToOrderService listingToOrderService) {
+    public OrderServiceImpl(ListingToOrderService listingToOrderService, RestTemplate restTemplate) {
         this.listingToOrderService = listingToOrderService;
         this.restTemplate = restTemplate;
     }

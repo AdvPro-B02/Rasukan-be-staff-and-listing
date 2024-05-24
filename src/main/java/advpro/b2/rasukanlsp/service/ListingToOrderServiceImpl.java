@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class ListingToOrderServiceImpl implements ListingToOrderService {
-    private final String LISTING_API_BASE_URL = "http://35.197.147.171/Buyer/listing/get/";
+    private final String LISTING_API_BASE_URL = "http://34.87.180.11/Buyer/listing/get/";
     private RestTemplate restTemplate;
 
     public ListingToOrderServiceImpl(OrderRepository orderRepository, ListingToOrderRepository listingToOrderRepository, RestTemplate restTemplate) {
@@ -58,7 +58,7 @@ public class ListingToOrderServiceImpl implements ListingToOrderService {
             for (ListingToOrder listingToOrder : listOfListingToOrder) {
                 String listingIdNow = listingToOrder.getListingId().toString();
                 Listing listing = fetchListingDetail(listingIdNow);
-                ListingDTO listingDTO = new ListingDTO(listing.getListingId(), listing.getName(), listing.getPrice(), listing.getSeller(), listingToOrder.getQuantity(), listing.getOrderCounter(), listing.getExpirationDate(), listing.isFeaturedStatus());
+                ListingDTO listingDTO = new ListingDTO(listing.getListingId(), listing.getName(), listing.getPrice(), listing.getSeller(), listingToOrder.getQuantity(), listing.getOrderCounter());
                 listOfListings.add(listingDTO);
             }
         } else {
