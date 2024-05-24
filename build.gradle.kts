@@ -8,9 +8,9 @@ plugins {
 
 sonar {
     properties {
-        property("sonar.projectKey", "adprob2_Rasukan-be-staff-listing-payment")
-        property("sonar.organization", "adprob2")
-        property("sonar.host.url", "https://sonarcloud.io")
+        property "sonar.projectKey", "AdvPro-B02_Rasukan-be-staff-listing-payment"
+        property "sonar.organization", "adprob2"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
