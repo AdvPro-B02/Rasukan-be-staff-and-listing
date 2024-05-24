@@ -19,18 +19,14 @@ public class Listing {
     private int stock;
     private UUID seller;
     private int orderCounter;
-    private LocalDate expirationDate;
-    private boolean featuredStatus;
 
-    public Listing(UUID listingId, String name, int stock, int price, UUID seller, int orderCounter, LocalDate expirationDate, boolean featuredStatus){
+    public Listing(UUID listingId, String name, int stock, int price, UUID seller, int orderCounter){
         this.listingId = listingId;
         this.name = name;
         this.price = price;
         this.stock = stock;
         this.seller = seller;
         this.orderCounter = orderCounter;
-        this.expirationDate = expirationDate;
-        this.featuredStatus = featuredStatus;
     }
 
     public Listing() {}

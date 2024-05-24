@@ -8,9 +8,8 @@ import java.util.List;
 import java.util.UUID;
 
 public interface FeaturedDecoratorService extends ListingService {
-    String markListingAsFeatured(UUID id, boolean status, LocalDate expirationDate);
-    String removeFeaturedStatus(UUID id, boolean status, LocalDate expirationDate);
-    List<FeaturedListing> getAllListingsSortedByFeatured();
+    String markListingAsFeatured(UUID id);
+    String removeFeaturedStatus(UUID id);
     void updateExpiredFeaturedStatus();
 
     List<FeaturedListing> getFeaturedListings();

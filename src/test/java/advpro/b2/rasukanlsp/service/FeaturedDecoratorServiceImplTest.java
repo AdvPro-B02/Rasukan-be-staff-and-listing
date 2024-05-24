@@ -37,7 +37,7 @@ public class FeaturedDecoratorServiceImplTest {
 
         when(listingService.getListingDetail(id)).thenReturn(Optional.of(listing));
 
-        String message = featuredDecoratorService.markListingAsFeatured(id, status, LocalDate.now());
+        String message = featuredDecoratorService.markListingAsFeatured(id);
 
         assertEquals("Listing with ID " + id.toString() + " has been marked as featured", message);
     }
@@ -49,7 +49,7 @@ public class FeaturedDecoratorServiceImplTest {
 
         when(listingService.getListingDetail(id)).thenReturn(Optional.empty());
 
-        String message = featuredDecoratorService.markListingAsFeatured(id, status, LocalDate.now());
+        String message = featuredDecoratorService.markListingAsFeatured(id);
 
         assertEquals("Listing with ID " + id.toString() + " not found", message);
     }
@@ -65,7 +65,7 @@ public class FeaturedDecoratorServiceImplTest {
 
         when(listingService.getListingDetail(id)).thenReturn(Optional.of(listing));
 
-        String message = featuredDecoratorService.removeFeaturedStatus(id, false, null);
+        String message = featuredDecoratorService.removeFeaturedStatus(id);
 
         assertEquals("Featured status has been removed from listing with ID " + id.toString(), message);
     }
@@ -76,7 +76,7 @@ public class FeaturedDecoratorServiceImplTest {
 
         when(listingService.getListingDetail(id)).thenReturn(Optional.empty());
 
-        String message = featuredDecoratorService.removeFeaturedStatus(id, false, null);
+        String message = featuredDecoratorService.removeFeaturedStatus(id);
 
         assertEquals("Listing with ID " + id.toString() + " not found", message);
     }
@@ -101,30 +101,4 @@ public class FeaturedDecoratorServiceImplTest {
         assertNull(featuredListing.getExpirationDate());
     }
 
-    @Test
-    void testGetAllListingsSortedByFeatured() {
-        LocalDate currentDate = LocalDate.now();
-
-        FeaturedListing featuredListing1 = new FeaturedListing(UUID.randomUUID(), "Listing 1", true, currentDate.plusDays(5));
-        FeaturedListing featuredListing2 = new FeaturedListing(UUID.randomUUID(), "Listing 3", true, currentDate.plusDays(3));
-
-        FeaturedListing nonFeaturedListing = new FeaturedListing(UUID.randomUUID(),  "Listing 2", true, currentDate.minusDays(8));
-
-        List<FeaturedListing> allListings = new ArrayList<>();
-        allListings.add(featuredListing1);
-        allListings.add(nonFeaturedListing);
-        allListings.add(featuredListing2);
-        when(listingService.getAllListings()).thenReturn(allListings);
-
-        List<FeaturedListing> sortedListings = featuredDecoratorService.getAllListingsSortedByFeatured();
-
-        assertEquals(3, sortedListings.size());
-        assertTrue(sortedListings.get(0).isFeaturedStatus());
-        assertTrue(sortedListings.get(1).isFeaturedStatus());
-        assertFalse(sortedListings.get(2).isFeaturedStatus());
-
-        assertEquals("Listing 1", sortedListings.get(0).getName());
-        assertEquals("Listing 3", sortedListings.get(1).getName());
-        assertEquals("Listing 2", sortedListings.get(2).getName());
-    }
 }

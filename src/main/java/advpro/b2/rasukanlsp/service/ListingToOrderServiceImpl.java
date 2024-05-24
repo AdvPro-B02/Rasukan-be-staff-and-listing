@@ -58,7 +58,7 @@ public class ListingToOrderServiceImpl implements ListingToOrderService {
             for (ListingToOrder listingToOrder : listOfListingToOrder) {
                 String listingIdNow = listingToOrder.getListingId().toString();
                 Listing listing = fetchListingDetail(listingIdNow);
-                ListingDTO listingDTO = new ListingDTO(listing.getListingId(), listing.getName(), listing.getPrice(), listing.getSeller(), listingToOrder.getQuantity(), listing.getOrderCounter(), listing.getExpirationDate(), listing.isFeaturedStatus());
+                ListingDTO listingDTO = new ListingDTO(listing.getListingId(), listing.getName(), listing.getPrice(), listing.getSeller(), listingToOrder.getQuantity(), listing.getOrderCounter());
                 listOfListings.add(listingDTO);
             }
         } else {

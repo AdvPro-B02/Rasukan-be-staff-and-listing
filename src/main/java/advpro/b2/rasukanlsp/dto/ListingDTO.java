@@ -19,14 +19,12 @@ public class ListingDTO {
     private LocalDate expiredDate;
     private boolean featuredListing;
 
-    public ListingDTO(UUID listingId, String name, int price, UUID seller, int quantity, int orderCounter, LocalDate expiredDate, boolean featuredListing) {
+    public ListingDTO(UUID listingId, String name, int price, UUID seller, int quantity, int orderCounter) {
         this.listingId = listingId;
         this.name = name;
         this.price = price;
         this.seller = seller;
         this.quantity = quantity;
         this.orderCounter = orderCounter;
-        this.expiredDate = expiredDate;
-        this.featuredListing = featuredListing;
     }
 }
