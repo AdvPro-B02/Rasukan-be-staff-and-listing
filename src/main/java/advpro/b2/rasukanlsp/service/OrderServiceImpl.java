@@ -9,11 +9,14 @@ import advpro.b2.rasukanlsp.repository.OrderRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
 @Service
 public class OrderServiceImpl implements OrderService {
+    private final String AUTH_API_BASE_URL = "http://34.87.180.11/Buyer/listing/get/";
+    private RestTemplate restTemplate;
     private ListingToOrderService listingToOrderService;
 
     @Autowired
@@ -22,6 +25,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     public OrderServiceImpl(ListingToOrderService listingToOrderService) {
         this.listingToOrderService = listingToOrderService;
+        this.restTemplate = restTemplate;
     }
 
     public OrderServiceImpl() {}
@@ -37,6 +41,7 @@ public class OrderServiceImpl implements OrderService {
             ListingToOrderBuilder listingToOrderBuilder = new ListingToOrderBuilder(listingNowId, order, quantity);
             listingToOrderService.createListingToOrder(listingToOrderBuilder);
         }
+
         return order;
     }
 

@@ -68,8 +68,8 @@ tasks.jacocoTestReport {
 
 sonar {
     properties {
-        property("sonar.projectKey", "syazantri_tutorial-1")
-        property("sonar.organization", "syazantri")
+        property("sonar.projectKey", "adprob2_Rasukan-be-staff-listing-payment")
+        property("sonar.organization", "adprob2")
         property("sonar.java.binaries", ".")
     }
 }
