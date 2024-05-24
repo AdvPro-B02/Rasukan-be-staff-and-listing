@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class ListingToOrderServiceImpl implements ListingToOrderService {
-    private final String LISTING_API_BASE_URL = "http://34.87.180.11/Buyer/listing/get/";
+    private final String LISTING_API_BASE_URL = "http://35.197.147.171/Buyer/listing/get/";
     private RestTemplate restTemplate;
 
     public ListingToOrderServiceImpl(OrderRepository orderRepository, ListingToOrderRepository listingToOrderRepository, RestTemplate restTemplate) {
