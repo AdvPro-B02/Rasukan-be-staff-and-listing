@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -34,6 +36,48 @@ public class FeaturedDecoratorServiceImplTest {
     }
 
     @Test
+    void testFetchAllListings() {
+        String url = "http://34.87.180.11/Buyer/listing/all";
+        Listing listing1 = new Listing();
+        listing1.setListingId(UUID.randomUUID());
+        listing1.setName("Listing1");
+
+        Listing listing2 = new Listing();
+        listing2.setListingId(UUID.randomUUID());
+        listing2.setName("Listing2");
+
+        List<Listing> mockListings = Arrays.asList(listing1, listing2);
+        ResponseEntity<List<Listing>> responseEntity = new ResponseEntity<>(mockListings, HttpStatus.OK);
+
+        when(restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Listing>>() {}))
+                .thenReturn(responseEntity);
+
+        List<Listing> listings = featuredDecoratorService.fetchAllListings();
+
+        assertEquals(2, listings.size());
+        assertEquals("Listing1", listings.get(0).getName());
+        assertEquals("Listing2", listings.get(1).getName());
+    }
+
+
+    @Test
+    void testGetFeaturedListings() {
+        FeaturedListing featuredListing1 = new FeaturedListing(UUID.randomUUID(), "Listing1", true, LocalDate.now().plusDays(3));
+        FeaturedListing featuredListing2 = new FeaturedListing(UUID.randomUUID(), "Listing2", true, LocalDate.now().plusDays(1));
+        FeaturedListing nonFeaturedListing = new FeaturedListing(UUID.randomUUID(), "Listing3", false, null);
+
+        List<FeaturedListing> mockListings = Arrays.asList(featuredListing1, featuredListing2, nonFeaturedListing);
+
+        when(listingService.getAllListings()).thenReturn(mockListings);
+
+        List<FeaturedListing> featuredListings = featuredDecoratorService.getFeaturedListings();
+
+        assertEquals(2, featuredListings.size());
+        assertEquals("Listing1", featuredListings.get(0).getName());
+        assertEquals("Listing2", featuredListings.get(1).getName());
+    }
+
+    @Test
     void testMarkListingAsFeatured() {
         UUID id = UUID.randomUUID();
 
@@ -51,7 +95,6 @@ public class FeaturedDecoratorServiceImplTest {
     void testMarkListingAsFeatured_NotFound() {
         UUID id = UUID.randomUUID();
 
-        // Stub the RestTemplate to return NOT_FOUND response
         when(restTemplate.getForEntity(anyString(), eq(Listing.class)))
                 .thenReturn(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 
@@ -106,4 +149,14 @@ public class FeaturedDecoratorServiceImplTest {
         assertFalse(featuredListing.isFeaturedStatus());
         assertNull(featuredListing.getExpirationDate());
     }
+
+    @Test
+    void testFetchAllListings_FailedRequest() {
+        String listingAllApiUrl = "http://34.87.180.11/Buyer/listing/all";
+        when(restTemplate.exchange(eq(listingAllApiUrl), eq(HttpMethod.GET), any(), eq(new ParameterizedTypeReference<List<Listing>>() {})))
+                .thenThrow(new RuntimeException("Failed to fetch all listings from Supabase."));
+
+        assertThrows(RuntimeException.class, () -> featuredDecoratorService.fetchAllListings());
+    }
+
 }

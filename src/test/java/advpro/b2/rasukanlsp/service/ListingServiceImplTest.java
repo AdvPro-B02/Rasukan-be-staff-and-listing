@@ -2,11 +2,13 @@ package advpro.b2.rasukanlsp.service;
 
 import advpro.b2.rasukanlsp.model.FeaturedListing;
 import advpro.b2.rasukanlsp.repository.FeaturedListingRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.mockito.ArgumentMatchers.eq;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,20 +17,16 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
-public class ListingServiceImplTest {
+@ExtendWith(MockitoExtension.class)
+class ListingServiceImplTest {
 
     @Mock
     private FeaturedListingRepository featuredListingRepository;
 
     @InjectMocks
     private ListingServiceImpl listingService;
-
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     @Test
     void testGetListingDetail_HappyPath() {
@@ -67,6 +65,8 @@ public class ListingServiceImplTest {
         when(featuredListingRepository.save(any(FeaturedListing.class))).thenReturn(listing);
 
         listingService.saveListing(listing);
+
+        verify(featuredListingRepository, times(1)).save(eq(listing));
     }
 
     @Test
@@ -92,4 +92,14 @@ public class ListingServiceImplTest {
 
         assertTrue(result.isEmpty());
     }
+
+    @Test
+    void testRemoveListingById() {
+        UUID listingId = UUID.randomUUID();
+
+        listingService.removeListingById(listingId);
+
+        verify(featuredListingRepository, times(1)).deleteById(listingId);
+    }
+
 }

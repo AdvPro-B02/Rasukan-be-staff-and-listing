@@ -1,6 +1,4 @@
 package advpro.b2.rasukanlsp.service;
-import advpro.b2.rasukanlsp.repository.FeaturedListingRepository;
-
 
 import advpro.b2.rasukanlsp.model.FeaturedListing;
 import advpro.b2.rasukanlsp.model.Listing;
@@ -20,41 +18,15 @@ import java.util.stream.Collectors;
 
 @Service
 public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
-    private final String LISTING_ALL_API_URL = "http://34.87.180.11/Buyer/listing/all";
-    private final String LISTING_API_BASE_URL = "http://34.87.180.11/Buyer/listing/get/";
+    private final String listingAllApiUrl = "http://34.87.180.11/Buyer/listing/all";
+    private final String listingApiBaseUrl = "http://34.87.180.11/Buyer/listing/get/";
+    private final String LISTING_ID_MSG = "Listing with ID ";
     private final RestTemplate restTemplate;
     private final ListingService listingService;
 
     public FeaturedDecoratorServiceImpl(@Qualifier("listingServiceImpl") ListingService listingService, RestTemplate restTemplate) {
         this.listingService = listingService;
         this.restTemplate = restTemplate;
-    }
-
-    @Override
-    public Listing fetchListingDetail(String listingId) {
-        String url = LISTING_API_BASE_URL + listingId;
-        ResponseEntity<Listing> response = restTemplate.getForEntity(url, Listing.class);
-        if (response.getStatusCode() == HttpStatus.OK) {
-            return response.getBody();
-        } else {
-            throw new RuntimeException("Failed to fetch listing detail from Supabase.");
-        }
-    }
-
-    @Override
-    public List<Listing> fetchAllListings() {
-        String url = LISTING_ALL_API_URL;
-        ResponseEntity<List<Listing>> response = restTemplate.exchange(
-                url,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<List<Listing>>() {});
-
-        if (response.getStatusCode() == HttpStatus.OK) {
-            return response.getBody();
-        } else {
-            throw new RuntimeException("Failed to fetch all listings from Supabase.");
-        }
     }
 
     @Override
@@ -77,6 +49,38 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
         listingService.removeListingById(listingId);
     }
 
+    private static class ListingDetailFetchException extends RuntimeException {
+        public ListingDetailFetchException(String message) {
+            super(message);
+        }
+    }
+
+    @Override
+    public Listing fetchListingDetail(String listingId) {
+        String url = listingApiBaseUrl + listingId;
+        ResponseEntity<Listing> response = restTemplate.getForEntity(url, Listing.class);
+        if (response.getStatusCode() == HttpStatus.OK) {
+            return response.getBody();
+        } else {
+            throw new ListingDetailFetchException("Failed to fetch listing detail from Supabase.");
+        }
+    }
+    @Override
+    public List<Listing> fetchAllListings() {
+        String url = listingAllApiUrl;
+        ResponseEntity<List<Listing>> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Listing>>() {});
+
+        if (response.getStatusCode() == HttpStatus.OK) {
+            return response.getBody();
+        } else {
+            throw new RuntimeException("Failed to fetch all listings from Supabase.");
+        }
+    }
+
     @Override
     public String markListingAsFeatured(UUID listingId) {
         try {
@@ -89,9 +93,9 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
                     LocalDate.now().plusDays(7)
             );
             saveListing(featuredListing);
-            return "Listing with ID " + listingId + " has been marked as featured";
+            return LISTING_ID_MSG + listingId + " has been marked as featured";
         } catch (RuntimeException e) {
-            return "Listing with ID " + listingId + " not found";
+            return LISTING_ID_MSG + listingId + " not found";
         }
     }
 
@@ -103,10 +107,9 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
             removeListingById(listingId);
             return "Featured status has been removed from listing with ID " + listingId;
         } else {
-            return "Listing with ID " + listingId + " not found";
+            return LISTING_ID_MSG + listingId + " not found";
         }
     }
-
 
     @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
     @Override
@@ -128,13 +131,6 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
     @Override
     public List<FeaturedListing> getFeaturedListings() {
         List<FeaturedListing> allListings = getAllListings();
-        allListings.forEach(listing -> {
-            if (listing.isFeaturedStatus() && listing.getExpirationDate() != null && LocalDate.now().isAfter(listing.getExpirationDate())) {
-                listing.setFeaturedStatus(false);
-                listing.setExpirationDate(null);
-                saveListing(listing);
-            }
-        });
 
         List<FeaturedListing> featuredListings = allListings.stream()
                 .filter(FeaturedListing::isFeaturedStatus)

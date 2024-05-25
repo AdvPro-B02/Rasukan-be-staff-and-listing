@@ -15,6 +15,7 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
 public class StaffControllerTest {
@@ -31,7 +32,6 @@ public class StaffControllerTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        // Dummy data
         listings = new HashMap<>();
         UUID id = UUID.randomUUID();
         FeaturedListing listing = new FeaturedListing(id, "Product 1", false, null);
@@ -62,6 +62,27 @@ public class StaffControllerTest {
     }
 
     @Test
+    public void testGetListingDetail_InvalidUUID() {
+        String invalidUUID = "invalid-uuid";
+
+        ResponseEntity<?> responseEntity = listingController.getListingDetail(invalidUUID);
+
+        assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
+        assertEquals("Invalid UUID format: " + invalidUUID, responseEntity.getBody());
+    }
+
+    @Test
+    public void testGetListingDetail_InternalServerError() {
+        UUID dummyId = UUID.randomUUID();
+        doThrow(new RuntimeException("Unexpected error")).when(featuredService).getListingDetail(dummyId);
+
+        ResponseEntity<?> responseEntity = listingController.getListingDetail(dummyId.toString());
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, responseEntity.getStatusCode());
+        assertEquals("Internal Server Error", responseEntity.getBody());
+    }
+
+    @Test
     public void testMarkListingAsFeatured_Success() {
         UUID id = listings.keySet().iterator().next();
         when(featuredService.markListingAsFeatured(eq(id)))
@@ -83,6 +104,16 @@ public class StaffControllerTest {
 
         assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
         assertEquals("Listing with ID " + id + " not found", responseEntity.getBody());
+    }
+
+    @Test
+    public void testMarkListingAsFeatured_InvalidUUID() {
+        String invalidUUID = "invalid-uuid";
+
+        ResponseEntity<String> responseEntity = listingController.markListingAsFeatured(invalidUUID);
+
+        assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
+        assertEquals("Invalid UUID format: " + invalidUUID, responseEntity.getBody());
     }
 
     @Test
@@ -109,5 +140,26 @@ public class StaffControllerTest {
 
         assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
         assertEquals("Listing with ID " + id + " not found", responseEntity.getBody());
+    }
+
+    @Test
+    public void testRemoveFeaturedStatus_InvalidUUID() {
+        String invalidUUID = "invalid-uuid";
+
+        ResponseEntity<String> responseEntity = listingController.removeFeaturedStatus(invalidUUID);
+
+        assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
+        assertEquals("Invalid UUID format: " + invalidUUID, responseEntity.getBody());
+    }
+
+    @Test
+    public void testGetFeaturedListings_Success() {
+        List<FeaturedListing> dummyListings = new ArrayList<>(listings.values());
+        when(featuredService.getFeaturedListings()).thenReturn(dummyListings);
+
+        ResponseEntity<List<FeaturedListing>> responseEntity = listingController.getFeaturedListings();
+
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertEquals(dummyListings, responseEntity.getBody());
     }
 }
