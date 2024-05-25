@@ -79,9 +79,9 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
 
     @Override
     public String markListingAsFeatured(UUID listingId) {
-        Listing supabaseListing = fetchListingDetail(listingId.toString());
+        try {
+            Listing supabaseListing = fetchListingDetail(listingId.toString());
 
-        if (supabaseListing != null) {
             FeaturedListing featuredListing = new FeaturedListing(
                     supabaseListing.getListingId(),
                     supabaseListing.getName(),
@@ -90,11 +90,10 @@ public class FeaturedDecoratorServiceImpl implements FeaturedDecoratorService {
             );
             saveListing(featuredListing);
             return "Listing with ID " + listingId + " has been marked as featured";
-        } else {
+        } catch (RuntimeException e) {
             return "Listing with ID " + listingId + " not found";
         }
     }
-
 
     @Override
     public String removeFeaturedStatus(UUID listingId) {
