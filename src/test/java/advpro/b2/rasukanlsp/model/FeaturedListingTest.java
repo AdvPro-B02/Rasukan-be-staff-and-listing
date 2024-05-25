@@ -1,6 +1,4 @@
 package advpro.b2.rasukanlsp.model;
-
-import advpro.b2.rasukanlsp.model.FeaturedListing;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -8,10 +6,10 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FeaturedListingTest {
+class FeaturedListingTest {
 
     @Test
-    public void testConstructorAndGetters() {
+    void testConstructorAndGetters() {
         UUID id = UUID.randomUUID();
         String name = "Featured Listing Test";
         boolean featuredStatus = true;
@@ -26,7 +24,7 @@ public class FeaturedListingTest {
     }
 
     @Test
-    public void testSetters() {
+    void testSetters() {
         FeaturedListing listing = new FeaturedListing();
 
         UUID id = UUID.randomUUID();
@@ -46,7 +44,7 @@ public class FeaturedListingTest {
     }
 
     @Test
-    public void testToStringMethod() {
+    void testToStringMethod() {
         UUID id = UUID.randomUUID();
         String name = "Featured Listing Test";
         boolean featuredStatus = true;

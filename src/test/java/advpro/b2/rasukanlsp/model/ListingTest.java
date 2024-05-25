@@ -1,6 +1,5 @@
 package advpro.b2.rasukanlsp.model;
 
-import advpro.b2.rasukanlsp.model.Listing;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -9,10 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ListingTest {
+class ListingTest {
 
     @Test
-    public void testConstructorAndGetters() {
+    void testConstructorAndGetters() {
         UUID id = UUID.randomUUID();
         String name = "Test Listing";
         int price = 100;
@@ -31,7 +30,7 @@ public class ListingTest {
     }
 
     @Test
-    public void testSetters() {
+    void testSetters() {
         UUID id = UUID.randomUUID();
         Listing listing = new Listing();
 
@@ -52,7 +51,7 @@ public class ListingTest {
 
 
     @Test
-    public void testToStringMethod() {
+    void testToStringMethod() {
         UUID id = UUID.randomUUID();
         String name = "Test Listing";
         int price = 100;

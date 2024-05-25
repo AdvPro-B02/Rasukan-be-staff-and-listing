@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class FeaturedListingRepositoryTest {
+class FeaturedListingRepositoryTest {
 
     @Mock
     private FeaturedListingRepository featuredListingRepository;
@@ -27,7 +27,7 @@ public class FeaturedListingRepositoryTest {
     private ListingServiceImpl listingService;
 
     @Test
-    public void testFindById() {
+    void testFindById() {
         UUID id = UUID.randomUUID();
         FeaturedListing listing = new FeaturedListing(id, "Test Listing", false, null);
         when(featuredListingRepository.findById(id)).thenReturn(Optional.of(listing));
@@ -38,7 +38,7 @@ public class FeaturedListingRepositoryTest {
     }
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         List<FeaturedListing> listings = new ArrayList<>();
         listings.add(new FeaturedListing(UUID.randomUUID(), "Listing 1", false, null));
         listings.add(new FeaturedListing(UUID.randomUUID(), "Listing 2", true, LocalDate.now().plusDays(5)));
@@ -52,7 +52,7 @@ public class FeaturedListingRepositoryTest {
     }
 
     @Test
-    public void testSaveListing() {
+    void testSaveListing() {
         UUID id = UUID.randomUUID();
         FeaturedListing listing = new FeaturedListing(id, "Test Listing", false, null);
 
