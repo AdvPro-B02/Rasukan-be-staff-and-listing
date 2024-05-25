@@ -206,3 +206,151 @@
 2024-05-25T20:23:25.468+07:00  INFO 2287 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-25T20:23:25.583+07:00  INFO 2287 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-05-25T20:23:25.586+07:00  INFO 2287 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-25T20:27:37.411+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 2462 (/Users/farah/Rasukan-be-staff-listing-payment/build/classes/java/main started by farah in /Users/farah/Rasukan-be-staff-listing-payment)
+2024-05-25T20:27:37.412+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-25T20:27:37.431+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-25T20:27:37.431+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-25T20:27:37.903+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-25T20:27:37.923+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2024-05-25T20:27:38.234+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-25T20:27:38.240+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-25T20:27:38.240+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-25T20:27:38.259+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-25T20:27:38.260+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 828 ms
+2024-05-25T20:27:38.489+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-25T20:27:38.527+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-25T20:27:38.545+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-25T20:27:38.697+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-25T20:27:38.721+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-25T20:27:39.005+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@770e250b
+2024-05-25T20:27:39.006+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-25T20:27:39.053+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-25T20:27:39.442+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-25T20:27:39.472+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:27:39.472+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-25T20:27:39.473+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:27:39.473+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-25T20:27:39.473+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:27:39.473+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-25T20:27:39.473+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:27:39.473+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-25T20:27:39.855+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:27:40.175+07:00  WARN 2462 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-25T20:27:40.521+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-25T20:27:40.525+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-25T20:27:40.571+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-25T20:27:40.581+07:00  INFO 2462 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 3.319 seconds (process running for 3.904)
+2024-05-25T20:27:40.892+07:00  INFO 2462 --- [RasukanAuth] [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-25T20:27:40.892+07:00  INFO 2462 --- [RasukanAuth] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-25T20:27:40.893+07:00  INFO 2462 --- [RasukanAuth] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-25T20:36:51.279+07:00  INFO 2462 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:36:51.327+07:00  INFO 2462 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-25T20:36:51.328+07:00  INFO 2462 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-25T20:41:16.990+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 2624 (/Users/farah/Rasukan-be-staff-listing-payment/build/classes/java/main started by farah in /Users/farah/Rasukan-be-staff-listing-payment)
+2024-05-25T20:41:16.992+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-25T20:41:17.012+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-25T20:41:17.012+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-25T20:41:17.422+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-25T20:41:17.442+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2024-05-25T20:41:17.745+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-25T20:41:17.749+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-25T20:41:17.749+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-25T20:41:17.767+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-25T20:41:17.767+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 755 ms
+2024-05-25T20:41:17.897+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-25T20:41:17.924+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-25T20:41:17.936+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-25T20:41:18.035+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-25T20:41:18.046+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-25T20:41:18.127+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56855d7b
+2024-05-25T20:41:18.128+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-25T20:41:18.145+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-25T20:41:18.510+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-25T20:41:18.518+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:41:18.518+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-25T20:41:18.518+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:41:18.518+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-25T20:41:18.519+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:41:18.519+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-25T20:41:18.519+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:41:18.519+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-25T20:41:18.541+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:41:18.802+07:00  WARN 2624 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-25T20:41:19.193+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-25T20:41:19.198+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-25T20:41:19.241+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-25T20:41:19.251+07:00  INFO 2624 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 2.409 seconds (process running for 2.809)
+2024-05-25T20:41:19.661+07:00  INFO 2624 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.100.26] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-25T20:41:19.661+07:00  INFO 2624 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.100.26] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-25T20:41:19.662+07:00  INFO 2624 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.100.26] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-25T20:45:03.571+07:00  INFO 2624 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:45:03.589+07:00  INFO 2624 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-25T20:45:03.591+07:00  INFO 2624 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-25T20:45:05.893+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 2663 (/Users/farah/Rasukan-be-staff-listing-payment/build/classes/java/main started by farah in /Users/farah/Rasukan-be-staff-listing-payment)
+2024-05-25T20:45:05.894+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-25T20:45:05.911+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-25T20:45:05.911+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-25T20:45:06.295+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-25T20:45:06.315+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2024-05-25T20:45:06.604+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-25T20:45:06.608+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-25T20:45:06.608+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-25T20:45:06.624+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-25T20:45:06.625+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 714 ms
+2024-05-25T20:45:06.753+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-25T20:45:06.776+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-25T20:45:06.787+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-25T20:45:06.875+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-25T20:45:06.885+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-25T20:45:06.951+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7dfbc63c
+2024-05-25T20:45:06.951+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-25T20:45:06.964+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-25T20:45:07.293+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-25T20:45:07.300+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:45:07.300+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-25T20:45:07.300+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:45:07.300+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-25T20:45:07.300+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:45:07.301+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-25T20:45:07.301+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:45:07.301+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-25T20:45:07.320+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:45:07.564+07:00  WARN 2663 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-25T20:45:07.902+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-25T20:45:07.906+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-25T20:45:07.944+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-25T20:45:07.954+07:00  INFO 2663 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 2.191 seconds (process running for 2.496)
+2024-05-25T20:45:08.357+07:00  INFO 2663 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.100.26] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-25T20:45:08.358+07:00  INFO 2663 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.100.26] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-25T20:45:08.358+07:00  INFO 2663 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.100.26] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-25T20:46:32.762+07:00  INFO 2682 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : Starting RasukanLSPApplicationTests using Java 21.0.2 with PID 2682 (started by farah in /Users/farah/Rasukan-be-staff-listing-payment)
+2024-05-25T20:46:32.762+07:00  INFO 2682 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : The following 1 profile is active: "dev"
+2024-05-25T20:46:33.324+07:00  INFO 2682 --- [RasukanAuth] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-25T20:46:33.355+07:00  INFO 2682 --- [RasukanAuth] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 3 JPA repository interfaces.
+2024-05-25T20:46:33.758+07:00  INFO 2682 --- [RasukanAuth] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-25T20:46:33.800+07:00  INFO 2682 --- [RasukanAuth] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-25T20:46:33.821+07:00  INFO 2682 --- [RasukanAuth] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-25T20:46:33.977+07:00  INFO 2682 --- [RasukanAuth] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-25T20:46:33.995+07:00  INFO 2682 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-25T20:46:34.138+07:00  INFO 2682 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@243fe859
+2024-05-25T20:46:34.139+07:00  INFO 2682 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-25T20:46:34.166+07:00  WARN 2682 --- [RasukanAuth] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-25T20:46:34.788+07:00  INFO 2682 --- [RasukanAuth] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-25T20:46:34.905+07:00  INFO 2682 --- [RasukanAuth] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:46:35.417+07:00  WARN 2682 --- [RasukanAuth] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-25T20:46:35.876+07:00  INFO 2682 --- [RasukanAuth] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoint(s) beneath base path '/actuator'
+2024-05-25T20:46:35.918+07:00  INFO 2682 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : Started RasukanLSPApplicationTests in 3.304 seconds (process running for 4.272)
+2024-05-25T20:46:37.043+07:00  INFO 2682 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:46:37.164+07:00  INFO 2682 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-25T20:46:37.166+07:00  INFO 2682 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-25T20:47:33.800+07:00  INFO 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25T20:47:33.805+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:47:33.805+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-25T20:47:33.805+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:47:33.805+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-25T20:47:33.805+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:47:33.805+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-25T20:47:33.806+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-25T20:47:33.806+07:00  WARN 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-25T20:47:33.809+07:00  INFO 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-25T20:47:33.810+07:00  INFO 2663 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
