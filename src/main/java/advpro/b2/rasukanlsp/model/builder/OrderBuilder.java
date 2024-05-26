@@ -14,18 +14,21 @@ public class OrderBuilder {
     private String paymentStatus;
     private String notes;
     private Integer discount;
+    private UUID seller;
 
-    public OrderBuilder(UUID userId, int nominal) {
+    public OrderBuilder(UUID userId, int nominal, UUID seller) {
         this.userId = userId;
         this.nominal = nominal;
         this.orderStatus = "WAITING_PAYMENT";
         this.paymentStatus = "PENDING";
+        this.seller = seller;
     }
 
-    public OrderBuilder(UUID orderId, UUID userId, int nominal) {
+    public OrderBuilder(UUID orderId, UUID userId, int nominal, UUID seller) {
         this.orderId = orderId;
         this.userId = userId;
         this.nominal = nominal;
+        this.seller = seller;
     }
 
     public void setOrderStatus(String orderStatus) {
@@ -53,6 +56,6 @@ public class OrderBuilder {
     }
 
     public Order build() {
-        return new Order(orderId, userId, nominal, orderStatus, paymentStatus, notes, discount);
+        return new Order(orderId, userId, nominal, orderStatus, paymentStatus, notes, discount, seller);
     }
 }

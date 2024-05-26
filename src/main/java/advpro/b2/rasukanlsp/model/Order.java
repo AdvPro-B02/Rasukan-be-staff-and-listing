@@ -31,7 +31,10 @@ public class Order {
     @Column(name = "discount", nullable = true)
     private Integer discount;
 
-    public Order(UUID orderId, UUID userId, int nominal, String orderStatus, String paymentStatus, String notes, Integer discount) {
+    @Column(name = "seller_id", nullable = true)
+    private UUID seller;
+
+    public Order(UUID orderId, UUID userId, int nominal, String orderStatus, String paymentStatus, String notes, Integer discount, UUID seller) {
         this.orderId = orderId;
         this.userId = userId;
         this.nominal = nominal;
@@ -39,6 +42,7 @@ public class Order {
         this.paymentStatus = paymentStatus;
         this.notes = notes;
         this.discount = discount;
+        this.seller = seller;
     }
 
     public Order() {
