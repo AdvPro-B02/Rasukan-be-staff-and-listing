@@ -9,5 +9,6 @@ public interface TopUpService {
     TopUp createTopUp(String user, int amount);
     TopUp getTopUpById(String id);
     List<TopUp> getAllTopUps();
+    List<TopUp> getAllTopUpByUser(String userId);
     TopUp updateStatus(String id, TopUpStatus status);
 }
