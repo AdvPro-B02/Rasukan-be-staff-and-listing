@@ -11,4 +11,6 @@ public interface TopUpService {
     List<TopUp> getAllTopUps();
     List<TopUp> getAllTopUpByUser(String userId);
     TopUp updateStatus(String id, TopUpStatus status);
+    void deleteTopUpById(String id);
+    void deleteTopUpByUser(String userId);
 }
