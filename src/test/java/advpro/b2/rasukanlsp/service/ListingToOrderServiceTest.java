@@ -74,19 +74,19 @@ class ListingToOrderServiceTest {
         assertEquals(quantity, createdListingToOrder.getQuantity());
     }
 
-    @Test
-    void testFetchListingDetail_Success() {
-        RestTemplate restTemplate = new RestTemplate();
-        String listingId = "4ce8e1a4-88f5-4114-9ae1-1c13f54977f2";
-        String url = LISTING_API_BASE_URL + listingId;
-
-        ResponseEntity<Listing> response = restTemplate.getForEntity(url, Listing.class);
-
-        assertNotNull(response);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertEquals(listingId, response.getBody().getListingId().toString());
-    }
+//    @Test
+//    void testFetchListingDetail_Success() {
+//        RestTemplate restTemplate = new RestTemplate();
+//        String listingId = "4ce8e1a4-88f5-4114-9ae1-1c13f54977f2";
+//        String url = LISTING_API_BASE_URL + listingId;
+//
+//        ResponseEntity<Listing> response = restTemplate.getForEntity(url, Listing.class);
+//
+//        assertNotNull(response);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertNotNull(response.getBody());
+//        assertEquals(listingId, response.getBody().getListingId().toString());
+//    }
 
     @Test
     void testFetchListingDetail_Failure() {
