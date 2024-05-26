@@ -11,5 +11,6 @@ public class OrderAndListingsRequest {
     private int nominal;
     private String notes;
     private Integer discount;
+    private UUID seller;
     private Map<UUID, Integer> listingQuantityMap;
 }

@@ -16,8 +16,6 @@ public class ListingDTO {
     private UUID seller;
     private int quantity;
     private int orderCounter;
-    private LocalDate expiredDate;
-    private boolean featuredListing;
 
     public ListingDTO(UUID listingId, String name, int price, UUID seller, int quantity, int orderCounter) {
         this.listingId = listingId;

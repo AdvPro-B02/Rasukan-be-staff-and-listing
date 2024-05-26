@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ListingToOrderTest {
 
@@ -37,6 +38,26 @@ public class ListingToOrderTest {
         assertEquals(listingToOrderId, listingToOrder.getListingInOrderId());
         assertEquals(listingId, listingToOrder.getListingId());
         assertEquals(order, listingToOrder.getOrder());
+        assertEquals(quantity, listingToOrder.getQuantity());
+    }
+
+    @Test
+    void testSetOrder() {
+        Order order = new Order();
+        ListingToOrder listingToOrder = new ListingToOrder();
+
+        listingToOrder.setOrder(order);
+
+        assertEquals(order, listingToOrder.getOrder());
+    }
+
+    @Test
+    void testSetQuantity() {
+        int quantity = 10;
+        ListingToOrder listingToOrder = new ListingToOrder();
+
+        listingToOrder.setQuantity(quantity);
+
         assertEquals(quantity, listingToOrder.getQuantity());
     }
 }
