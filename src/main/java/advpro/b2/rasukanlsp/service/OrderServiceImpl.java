@@ -159,7 +159,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void deleteOrder(UUID orderId) {
+        logger.info("deleteorder: masuk method");
         listingToOrderService.deleteListingToOrderByOrderId(orderId);
+        logger.info("deleteorder: masuk method");
         orderRepository.deleteById(orderId);
     }
 
