@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface TopUpRepository extends JpaRepository<TopUp, UUID> {
-    List<TopUp> findByUser(UUID user);
+    List<TopUp> findByUserId(UUID userId);
 }

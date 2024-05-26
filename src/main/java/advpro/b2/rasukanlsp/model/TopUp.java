@@ -15,8 +15,8 @@ public class TopUp {
     @GeneratedValue(strategy = GenerationType.UUID)
     UUID id;
 
-    @Column(name = "user", nullable = false)
-    UUID user;
+    @Column(name = "user_id", nullable = false)
+    UUID userId;
 
     @Column(name = "amount")
     int amount;
@@ -25,7 +25,7 @@ public class TopUp {
     TopUpStatus status;
 
     public TopUp(UUID user, int amount) {
-        this.user = user;
+        this.userId = user;
         this.amount = amount;
         this.status = TopUpStatus.PENDING;
     }
@@ -34,6 +34,8 @@ public class TopUp {
         this(user, amount);
         this.id = id;
     }
+
+    public TopUp() {}
 
     public void setStatus(TopUpStatus status) {
         this.status = status;

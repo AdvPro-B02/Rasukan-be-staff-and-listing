@@ -37,8 +37,8 @@ public class TopUpRepositoryTest {
 
     @Test
     void testFindTopUpByUser_success() {
-        UUID user = topUpList.getFirst().getUser();
-        List<TopUp> savedTopUp = topUpRepository.findByUser(user);
+        UUID user = topUpList.getFirst().getUserId();
+        List<TopUp> savedTopUp = topUpRepository.findByUserId(user);
 
         assertEquals(topUpList.size(), savedTopUp.size());
     }
@@ -46,7 +46,7 @@ public class TopUpRepositoryTest {
     @Test
     void testFindTopUpByUser_fail() {
         UUID user = UUID.randomUUID();
-        List<TopUp> savedTopUp = topUpRepository.findByUser(user);
+        List<TopUp> savedTopUp = topUpRepository.findByUserId(user);
 
         assertNotEquals(topUpList.size(), savedTopUp.size());
     }

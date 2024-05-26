@@ -21,7 +21,7 @@ public class TopUpTest {
         TopUp topUp = new TopUp(id, user, amount);
 
         assertEquals(id, topUp.getId());
-        assertEquals(user, topUp.getUser());
+        assertEquals(user, topUp.getUserId());
         assertEquals(amount, topUp.getAmount());
         assertEquals(TopUpStatus.PENDING, topUp.getStatus());
     }
@@ -36,11 +36,9 @@ public class TopUpTest {
         assertEquals(TopUpStatus.PENDING, topUp.getStatus());
 
         topUp.setStatus(TopUpStatus.ACCEPTED);
-
         assertEquals(TopUpStatus.ACCEPTED, topUp.getStatus());
 
         topUp.setStatus(TopUpStatus.REJECTED);
-
         assertEquals(TopUpStatus.REJECTED, topUp.getStatus());
     }
 }
