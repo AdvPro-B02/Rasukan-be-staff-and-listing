@@ -82,9 +82,10 @@ class OrderController {
         }
     }
 
-    @DeleteMapping("/{orderId}")
+    @DeleteMapping("/delete/{orderId}")
     public ResponseEntity<String> deleteOrder(@PathVariable UUID orderId) {
         try {
+            logger.info("deleteorder: masuk controller");
             orderService.deleteOrder(orderId);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

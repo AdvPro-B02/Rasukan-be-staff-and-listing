@@ -564,3 +564,646 @@
 2024-05-26T11:00:08.451+07:00  INFO 10805 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-26T11:00:08.961+07:00  INFO 10805 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-05-26T11:00:08.968+07:00  INFO 10805 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-26T11:25:09.679+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 15695 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:25:09.684+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:25:09.778+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-26T11:25:09.778+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-26T11:25:12.024+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:25:12.095+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:25:13.217+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:25:13.238+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:25:13.239+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:25:13.306+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:25:13.306+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3527 ms
+2024-05-26T11:25:14.004+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:25:14.142+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-26T11:25:14.233+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:25:14.677+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:25:14.724+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-26T11:25:14.963+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e74a2d2
+2024-05-26T11:25:14.965+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-26T11:25:15.067+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:25:16.432+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:25:16.459+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:25:16.459+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:25:16.460+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:25:16.460+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:25:16.460+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:25:16.460+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:25:16.461+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:25:16.461+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:25:16.526+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:25:17.407+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:25:18.685+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:25:18.696+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:25:18.824+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:25:18.843+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 10.265 seconds (process running for 11.69)
+2024-05-26T11:25:19.540+07:00  INFO 15695 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.1.12] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-26T11:25:19.541+07:00  INFO 15695 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-26T11:25:19.545+07:00  INFO 15695 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-05-26T11:25:33.911+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : hii
+2024-05-26T11:25:34.218+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : masuk fetchlistingdetail
+2024-05-26T11:25:34.218+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:25:34.327+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69400,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:25:34 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:25:34.337+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : berhasil get
+2024-05-26T11:25:34.337+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updated stock for listing ID: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:25:34.337+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updating stock listing
+2024-05-26T11:25:34.397+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : masuk fetchuserbaalance
+2024-05-26T11:25:34.491+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updating user balance
+2024-05-26T11:25:34.492+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : e3b012da-23a3-46c3-9307-23387f350d85
+2024-05-26T11:25:34.535+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{balance=297297, name=Salila, id=e3b012da-23a3-46c3-9307-23387f350d85, status=success},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:25:34 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:25:34.535+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : http://35.197.147.171/api/users/e3b012da-23a3-46c3-9307-23387f350d85/balance?balance=297297
+2024-05-26T11:25:42.654+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:25:42.654+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:25:42.697+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:25:42.698+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:25:43.133+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69398,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0}
+2024-05-26T11:25:43.137+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@a2ec569]
+2024-05-26T11:25:43.137+07:00  INFO 15695 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@a2ec569]
+2024-05-26T11:26:50.866+07:00  INFO 15695 --- [RasukanAuth] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-05-26T11:26:50.892+07:00  INFO 15695 --- [RasukanAuth] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:26:51.091+07:00  INFO 15695 --- [RasukanAuth] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-26T11:26:51.094+07:00  INFO 15695 --- [RasukanAuth] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-26T11:26:51.236+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 15695 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:26:51.236+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:26:52.221+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:26:52.252+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:26:52.786+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:26:52.790+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:26:52.790+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:26:52.809+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:26:52.809+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1571 ms
+2024-05-26T11:26:53.128+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:26:53.133+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:26:53.140+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:26:53.142+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-26T11:26:53.240+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@71186d76
+2024-05-26T11:26:53.241+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-26T11:26:53.300+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:26:53.456+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:26:53.457+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:53.458+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:26:53.459+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:53.459+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:26:53.460+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:53.460+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:26:53.461+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:53.461+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:26:53.478+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:26:54.216+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:26:54.946+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:26:54.953+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:26:54.996+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:26:55.006+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 3.797 seconds (process running for 107.851)
+2024-05-26T11:26:55.010+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-26T11:26:56.358+07:00  INFO 15695 --- [RasukanAuth] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-05-26T11:26:56.365+07:00  INFO 15695 --- [RasukanAuth] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:26:56.375+07:00  INFO 15695 --- [RasukanAuth] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-05-26T11:26:56.378+07:00  INFO 15695 --- [RasukanAuth] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-05-26T11:26:56.480+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 15695 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:26:56.480+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:26:56.797+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:26:56.807+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:26:57.054+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:26:57.059+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:26:57.060+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:26:57.073+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:26:57.073+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 591 ms
+2024-05-26T11:26:57.203+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:26:57.205+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:26:57.208+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:26:57.209+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-05-26T11:26:57.215+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@1c1a4be9
+2024-05-26T11:26:57.215+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-05-26T11:26:57.218+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:26:57.272+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:26:57.273+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:57.273+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:26:57.274+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:57.274+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:26:57.275+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:57.275+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:26:57.275+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:26:57.275+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:26:57.289+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:26:57.596+07:00  WARN 15695 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:26:58.077+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:26:58.082+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:26:58.114+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:26:58.122+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 1.662 seconds (process running for 110.967)
+2024-05-26T11:26:58.124+07:00  INFO 15695 --- [RasukanAuth] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-26T11:27:02.742+07:00  INFO 15695 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:27:02.776+07:00  INFO 15695 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-05-26T11:27:02.777+07:00  INFO 15695 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-05-26T11:27:05.658+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 16099 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:27:05.660+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:27:05.753+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-26T11:27:05.753+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-26T11:27:07.845+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:27:08.120+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 265 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:27:09.255+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:27:09.272+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:27:09.272+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:27:09.325+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:27:09.326+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3572 ms
+2024-05-26T11:27:09.791+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:27:09.871+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-26T11:27:09.919+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:27:10.265+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:27:10.306+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-26T11:27:10.436+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6364f056
+2024-05-26T11:27:10.437+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-26T11:27:10.545+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:27:11.705+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:27:11.729+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:27:11.729+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:27:11.730+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:27:11.730+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:27:11.731+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:27:11.731+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:27:11.732+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:27:11.732+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:27:11.803+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:27:12.524+07:00  WARN 16099 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:27:13.495+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:27:13.504+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:27:13.601+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:27:13.618+07:00  INFO 16099 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 8.575 seconds (process running for 9.519)
+2024-05-26T11:27:13.862+07:00  INFO 16099 --- [RasukanAuth] [RMI TCP Connection(5)-192.168.1.12] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-26T11:27:13.862+07:00  INFO 16099 --- [RasukanAuth] [RMI TCP Connection(5)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-26T11:27:13.865+07:00  INFO 16099 --- [RasukanAuth] [RMI TCP Connection(5)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-26T11:27:17.995+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : hii
+2024-05-26T11:27:18.091+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : masuk fetchlistingdetail
+2024-05-26T11:27:18.091+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:27:18.248+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69398,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:27:18 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:27:18.263+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : berhasil get
+2024-05-26T11:27:18.264+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updated stock for listing ID: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:27:18.268+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updating stock listing
+2024-05-26T11:27:18.389+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : masuk fetchuserbaalance
+2024-05-26T11:27:18.455+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updating user balance
+2024-05-26T11:27:18.455+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : e3b012da-23a3-46c3-9307-23387f350d85
+2024-05-26T11:27:18.494+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{balance=284752, name=Salila, id=e3b012da-23a3-46c3-9307-23387f350d85, status=success},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:27:18 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:27:18.495+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : http://35.197.147.171/api/users/e3b012da-23a3-46c3-9307-23387f350d85/balance?balance=284752
+2024-05-26T11:27:22.042+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:27:22.042+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:27:22.082+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:27:22.082+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:27:22.149+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69396,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0}
+2024-05-26T11:27:22.153+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@44daeb53]
+2024-05-26T11:27:22.153+07:00  INFO 16099 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@44daeb53]
+2024-05-26T11:27:47.728+07:00  INFO 16099 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:27:47.788+07:00  INFO 16099 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-26T11:27:47.791+07:00  INFO 16099 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-26T11:28:12.931+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 16319 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:28:12.933+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:28:12.994+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-26T11:28:12.995+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-26T11:28:14.106+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:28:14.175+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:28:15.053+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:28:15.069+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:28:15.070+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:28:15.122+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:28:15.122+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2127 ms
+2024-05-26T11:28:15.483+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:28:15.561+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-26T11:28:15.605+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:28:15.910+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:28:15.944+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-26T11:28:16.107+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@485d3013
+2024-05-26T11:28:16.114+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-26T11:28:16.176+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:28:17.257+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:28:17.280+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:28:17.281+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:28:17.281+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:28:17.281+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:28:17.282+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:28:17.282+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:28:17.283+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:28:17.283+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:28:17.335+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:28:18.101+07:00  WARN 16319 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:28:19.031+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:28:19.039+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:28:19.134+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:28:19.153+07:00  INFO 16319 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 6.675 seconds (process running for 7.565)
+2024-05-26T11:28:19.692+07:00  INFO 16319 --- [RasukanAuth] [RMI TCP Connection(3)-192.168.1.12] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-26T11:28:19.693+07:00  INFO 16319 --- [RasukanAuth] [RMI TCP Connection(3)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-26T11:28:19.695+07:00  INFO 16319 --- [RasukanAuth] [RMI TCP Connection(3)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-26T11:28:27.746+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : hii
+2024-05-26T11:28:27.846+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : masuk fetchlistingdetail
+2024-05-26T11:28:27.847+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:28:27.947+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69396,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:28:27 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:28:27.956+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : berhasil get
+2024-05-26T11:28:27.957+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : Updated stock for listing ID: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:28:27.958+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : Updating stock listing
+2024-05-26T11:28:28.012+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : masuk fetchuserbaalance
+2024-05-26T11:28:28.105+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : Updating user balance
+2024-05-26T11:28:28.106+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : e3b012da-23a3-46c3-9307-23387f350d85
+2024-05-26T11:28:28.155+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{balance=272207, name=Salila, id=e3b012da-23a3-46c3-9307-23387f350d85, status=success},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:28:28 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:28:28.156+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : http://35.197.147.171/api/users/e3b012da-23a3-46c3-9307-23387f350d85/balance?balance=272207
+2024-05-26T11:28:30.897+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:28:30.898+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:28:30.938+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:28:30.938+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:28:30.971+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69394,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0}
+2024-05-26T11:28:30.974+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@2a94fa7e]
+2024-05-26T11:28:30.974+07:00  INFO 16319 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@2a94fa7e]
+2024-05-26T11:32:01.103+07:00  INFO 16319 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:32:01.172+07:00  INFO 16319 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-26T11:32:01.175+07:00  INFO 16319 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-26T11:39:09.529+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 18334 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:39:09.531+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:39:09.588+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-26T11:39:09.589+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-26T11:39:10.938+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:39:11.005+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:39:12.025+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:39:12.045+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:39:12.046+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:39:12.105+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:39:12.106+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2517 ms
+2024-05-26T11:39:12.546+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:39:12.682+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-26T11:39:12.752+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:39:13.241+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:39:13.291+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-26T11:39:13.476+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@278f9dbf
+2024-05-26T11:39:13.479+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-26T11:39:13.606+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:39:14.958+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:39:14.987+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:39:14.987+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:39:14.988+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:39:14.988+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:39:14.989+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:39:14.989+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:39:14.990+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:39:14.990+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:39:15.063+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:39:15.836+07:00  WARN 18334 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:39:17.005+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:39:17.016+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:39:17.131+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:39:17.148+07:00  INFO 18334 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 8.07 seconds (process running for 9.122)
+2024-05-26T11:39:17.612+07:00  INFO 18334 --- [RasukanAuth] [RMI TCP Connection(3)-192.168.1.12] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-26T11:39:17.612+07:00  INFO 18334 --- [RasukanAuth] [RMI TCP Connection(3)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-26T11:39:17.615+07:00  INFO 18334 --- [RasukanAuth] [RMI TCP Connection(3)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-05-26T11:39:35.273+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : hii
+2024-05-26T11:39:35.423+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : masuk fetchlistingdetail
+2024-05-26T11:39:35.424+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:39:35.668+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69394,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:39:35 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:39:35.679+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : berhasil get
+2024-05-26T11:39:35.680+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updated stock for listing ID: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:39:35.681+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updating stock listing
+2024-05-26T11:39:35.803+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : masuk fetchuserbaalance
+2024-05-26T11:39:35.980+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : Updating user balance
+2024-05-26T11:39:35.980+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : e3b012da-23a3-46c3-9307-23387f350d85
+2024-05-26T11:39:36.104+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{balance=259662, name=Salila, id=e3b012da-23a3-46c3-9307-23387f350d85, status=success},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:39:36 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:39:36.104+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : http://35.197.147.171/api/users/e3b012da-23a3-46c3-9307-23387f350d85/balance?balance=259662
+2024-05-26T11:39:39.828+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:39:39.828+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:39:39.865+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:39:39.866+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:39:39.900+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69392,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0}
+2024-05-26T11:39:39.902+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@1eea7090]
+2024-05-26T11:39:39.902+07:00  INFO 18334 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@1eea7090]
+2024-05-26T11:41:40.986+07:00  INFO 18334 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:41:41.049+07:00  INFO 18334 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-26T11:41:41.052+07:00  INFO 18334 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-26T11:43:05.608+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 19078 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:43:05.615+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:43:05.782+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-26T11:43:05.782+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-26T11:43:07.306+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:43:07.373+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:43:08.275+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:43:08.291+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:43:08.291+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:43:08.353+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:43:08.353+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2570 ms
+2024-05-26T11:43:08.723+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:43:08.796+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-26T11:43:08.836+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:43:09.248+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:43:09.281+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-26T11:43:09.481+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72c84a21
+2024-05-26T11:43:09.482+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-26T11:43:09.546+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:43:10.711+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:43:10.736+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:10.736+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:43:10.737+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:10.737+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:43:10.738+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:10.739+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:43:10.740+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:10.741+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:43:10.814+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:43:11.512+07:00  WARN 19078 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:43:12.435+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:43:12.444+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:43:12.543+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:43:12.558+07:00  INFO 19078 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 7.665 seconds (process running for 9.363)
+2024-05-26T11:43:18.342+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-26T11:43:18.342+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-26T11:43:18.345+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-26T11:43:18.504+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : hii
+2024-05-26T11:43:18.608+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : masuk fetchlistingdetail
+2024-05-26T11:43:18.609+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:43:22.396+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-4] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:43:22.397+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-4] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:43:22.433+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-4] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:43:22.433+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-4] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:43:22.529+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-4] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69392,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0}
+2024-05-26T11:43:22.550+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-4] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@31a1cef5]
+2024-05-26T11:43:22.551+07:00  INFO 19078 --- [RasukanAuth] [http-nio-8080-exec-4] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@31a1cef5]
+2024-05-26T11:43:48.114+07:00  INFO 19078 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:43:48.131+07:00  INFO 19078 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-26T11:43:48.133+07:00  INFO 19078 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-26T11:43:52.609+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Starting RasukanLSPApplication using Java 21.0.2 with PID 19243 (/Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment/build/classes/java/main started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T11:43:52.611+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : The following 1 profile is active: "dev"
+2024-05-26T11:43:52.678+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-26T11:43:52.680+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-26T11:43:54.134+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T11:43:54.206+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
+2024-05-26T11:43:55.885+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-26T11:43:55.899+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-26T11:43:55.900+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-26T11:43:55.952+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-26T11:43:55.953+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3272 ms
+2024-05-26T11:43:57.288+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T11:43:57.412+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-26T11:43:57.487+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T11:43:57.808+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T11:43:57.847+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-26T11:43:58.019+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@41ad650e
+2024-05-26T11:43:58.021+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-26T11:43:58.275+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:43:59.405+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:43:59.430+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:59.430+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:43:59.431+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:59.431+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:43:59.431+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:59.431+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:43:59.432+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:43:59.432+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:43:59.520+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:44:00.284+07:00  WARN 19243 --- [RasukanAuth] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:44:01.524+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-26T11:44:01.532+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:44:01.643+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-26T11:44:01.662+07:00  INFO 19243 --- [RasukanAuth] [restartedMain] a.b2.rasukanlsp.RasukanLSPApplication    : Started RasukanLSPApplication in 9.747 seconds (process running for 10.569)
+2024-05-26T11:44:02.662+07:00  INFO 19243 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.1.12] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-26T11:44:02.663+07:00  INFO 19243 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-26T11:44:02.670+07:00  INFO 19243 --- [RasukanAuth] [RMI TCP Connection(2)-192.168.1.12] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2024-05-26T11:44:03.092+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : hii
+2024-05-26T11:44:03.258+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : masuk fetchlistingdetail
+2024-05-26T11:44:03.259+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:03.378+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69392,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:44:03 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:44:03.389+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : berhasil get
+2024-05-26T11:44:03.389+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : Updated stock for listing ID: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:03.389+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : Updating stock listing
+2024-05-26T11:44:03.459+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : masuk fetchuserbaalance
+2024-05-26T11:44:03.534+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : Updating user balance
+2024-05-26T11:44:03.534+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : e3b012da-23a3-46c3-9307-23387f350d85
+2024-05-26T11:44:03.585+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{balance=247117, name=Salila, id=e3b012da-23a3-46c3-9307-23387f350d85, status=success},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sun, 26 May 2024 04:44:03 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2024-05-26T11:44:03.586+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-2] a.b2.rasukanlsp.service.OrderService     : http://35.197.147.171/api/users/e3b012da-23a3-46c3-9307-23387f350d85/balance?balance=247117
+2024-05-26T11:44:07.035+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:44:07.036+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:44:07.084+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:07.084+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-3] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:07.136+07:00 ERROR 19243 --- [RasukanAuth] [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2024-05-26T04:44:07.237+00:00","status":500,"error":"Internal Server Error","path":"/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76"}"] with root cause
+
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2024-05-26T04:44:07.237+00:00","status":500,"error":"Internal Server Error","path":"/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:186) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:137) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:942) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:891) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:431) ~[spring-web-6.1.5.jar:6.1.5]
+	at advpro.b2.rasukanlsp.service.ListingToOrderServiceImpl.fetchListingDetail(ListingToOrderServiceImpl.java:60) ~[main/:na]
+	at advpro.b2.rasukanlsp.service.ListingToOrderServiceImpl.getListingsByOrderId(ListingToOrderServiceImpl.java:80) ~[main/:na]
+	at advpro.b2.rasukanlsp.controller.OrderController.getOrderAndListings(OrderController.java:68) ~[main/:na]
+	at advpro.b2.rasukanlsp.controller.OrderController.getAllOrderAndListings(OrderController.java:53) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-05-26T11:44:09.451+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-5] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:44:09.453+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-5] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:44:09.456+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-5] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:09.457+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-5] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:09.533+07:00 ERROR 19243 --- [RasukanAuth] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2024-05-26T04:44:09.640+00:00","status":500,"error":"Internal Server Error","path":"/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76"}"] with root cause
+
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2024-05-26T04:44:09.640+00:00","status":500,"error":"Internal Server Error","path":"/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:186) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:137) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:942) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:891) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:431) ~[spring-web-6.1.5.jar:6.1.5]
+	at advpro.b2.rasukanlsp.service.ListingToOrderServiceImpl.fetchListingDetail(ListingToOrderServiceImpl.java:60) ~[main/:na]
+	at advpro.b2.rasukanlsp.service.ListingToOrderServiceImpl.getListingsByOrderId(ListingToOrderServiceImpl.java:80) ~[main/:na]
+	at advpro.b2.rasukanlsp.controller.OrderController.getOrderAndListings(OrderController.java:68) ~[main/:na]
+	at advpro.b2.rasukanlsp.controller.OrderController.getAllOrderAndListings(OrderController.java:53) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-05-26T11:44:10.394+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-7] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:44:10.395+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-7] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:44:10.397+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-7] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:10.397+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-7] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:10.495+07:00 ERROR 19243 --- [RasukanAuth] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2024-05-26T04:44:10.597+00:00","status":500,"error":"Internal Server Error","path":"/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76"}"] with root cause
+
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2024-05-26T04:44:10.597+00:00","status":500,"error":"Internal Server Error","path":"/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:186) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:137) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:942) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:891) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:431) ~[spring-web-6.1.5.jar:6.1.5]
+	at advpro.b2.rasukanlsp.service.ListingToOrderServiceImpl.fetchListingDetail(ListingToOrderServiceImpl.java:60) ~[main/:na]
+	at advpro.b2.rasukanlsp.service.ListingToOrderServiceImpl.getListingsByOrderId(ListingToOrderServiceImpl.java:80) ~[main/:na]
+	at advpro.b2.rasukanlsp.controller.OrderController.getOrderAndListings(OrderController.java:68) ~[main/:na]
+	at advpro.b2.rasukanlsp.controller.OrderController.getAllOrderAndListings(OrderController.java:53) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-05-26T11:44:11.318+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-9] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:44:11.318+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-9] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:44:11.320+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-9] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:11.320+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-9] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:11.392+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-9] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69390,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0}
+2024-05-26T11:44:11.399+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-9] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@47f3c5dd]
+2024-05-26T11:44:11.400+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-9] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@47f3c5dd]
+2024-05-26T11:44:18.401+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-10] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:44:18.402+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-10] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:44:18.404+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-10] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: 16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:18.405+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-10] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:44:18.459+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-10] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":"listing_1","price":6969,"stock":69390,"seller":"574c2aa1-2fd3-48bb-a0c1-2fec2f53afc5","orderCounter":0}
+2024-05-26T11:44:18.460+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-10] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@453140ec]
+2024-05-26T11:44:18.460+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-10] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@453140ec]
+2024-05-26T11:44:47.125+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : deleteorder: masuk controller
+2024-05-26T11:44:47.126+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : deleteorder: masuk method
+2024-05-26T11:44:47.235+07:00  INFO 19243 --- [RasukanAuth] [http-nio-8080-exec-1] a.b2.rasukanlsp.service.OrderService     : selesai menghapus listingtoorder
+2024-05-26T11:46:01.441+07:00  INFO 19243 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:46:01.484+07:00  INFO 19243 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-26T11:46:01.488+07:00  INFO 19243 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
