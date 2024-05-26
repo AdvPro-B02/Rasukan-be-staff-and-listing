@@ -12,10 +12,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.UUID;
-import java.util.List;
-import java.util.Optional;
-import java.util.ArrayList;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -122,5 +119,49 @@ public class TopUpServiceTest {
         for (TopUp topUp : allTopUpByUser) {
             assertEquals(userId, topUp.getUserId());
         }
+    }
+
+    @Test
+    void testDeleteTopUpById_idIsUUID() {
+        TopUp topUp = topUpList.getFirst();
+        UUID id = topUp.getId();
+        doReturn(Optional.of(topUp)).when(topUpRepository).findById(any(UUID.class));
+        assertDoesNotThrow(() -> topUpService.getTopUpById(id.toString()));
+
+        topUpService.deleteTopUpById(id.toString());
+        doReturn(Optional.empty()).when(topUpRepository).findById(any(UUID.class));
+        verify(topUpRepository, times(1)).deleteOneById(any(UUID.class));
+        assertThrows(NoSuchElementException.class, () -> topUpService.getTopUpById(id.toString()));
+    }
+
+    @Test
+    void testDeleteTopUpById_idIsNotUUID() {
+        assertThrows(IllegalArgumentException.class, () -> topUpService.deleteTopUpById("abcd"));
+    }
+
+    @Test
+    void testDeleteTopUpByUser_idIsUUID() {
+        TopUp topUp = topUpList.getFirst();
+        UUID userId = topUp.getUserId();
+        List<TopUp> userTopUp = new ArrayList<>();
+        userTopUp.add(topUp);
+        userTopUp.add(new TopUp(UUID.randomUUID(), userId, 10));
+        doReturn(userTopUp).when(topUpRepository).findByUserId(any(UUID.class));
+
+        List<TopUp> topUpByUser = topUpService.getAllTopUpByUser(userId.toString());
+        assertEquals(userTopUp.size(), topUpByUser.size());
+
+        topUpService.deleteTopUpByUser(userId.toString());
+        doReturn(new ArrayList<TopUp>()).when(topUpRepository).findByUserId(any(UUID.class));
+
+        topUpByUser = topUpService.getAllTopUpByUser(userId.toString());
+        assertNotEquals(userTopUp.size(), topUpByUser.size());
+        assertEquals(0, topUpByUser.size());
+        verify(topUpRepository, times(1)).deleteAllByUserId(any(UUID.class));
+    }
+
+    @Test
+    void testDeleteTopUpByUser_idIsNotUUID() {
+        assertThrows(IllegalArgumentException.class, () -> topUpService.deleteTopUpById("abcd"));
     }
 }
