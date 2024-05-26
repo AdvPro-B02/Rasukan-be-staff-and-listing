@@ -54,6 +54,16 @@ public class TopUpServiceImpl implements TopUpService {
         return topUpRepository.save(topUp);
     }
 
+    @Override
+    public void deleteTopUpById(String id) {
+        topUpRepository.deleteOneById(UUID.fromString(id));
+    }
+
+    @Override
+    public void deleteTopUpByUser(String userId) {
+        topUpRepository.deleteAllByUserId(UUID.fromString(userId));
+    }
+
     private void requestUpdateBalance(UUID userId, int amount) {
         String url = "http://35.197.147.171/api/users/" + userId.toString() + "/balance";
         WebClient wc = WebClient.builder()
@@ -70,4 +80,6 @@ public class TopUpServiceImpl implements TopUpService {
             wc.post().bodyValue("balance=" + balance);
         } catch (JsonProcessingException ignored) {}
     }
+
+
 }

@@ -18,14 +18,12 @@ public class TopUpController {
     private TopUpService topUpService;
 
     @GetMapping
-    @ResponseBody
     public ResponseEntity<List<TopUp>> getAllTopUp() {
         List<TopUp> body = topUpService.getAllTopUps();
         return new ResponseEntity<>(body, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public ResponseEntity<Map<String, String>> getTopUpById(@PathVariable String id) {
         TopUp topUp;
         try {
@@ -36,8 +34,7 @@ public class TopUpController {
         return new ResponseEntity<>(bodySuccess(topUp), HttpStatus.OK);
     }
 
-    @PostMapping("/{id}")
-    @ResponseBody
+    @PutMapping("/{id}")
     public ResponseEntity<Map<String, String>> updateTopUp(@PathVariable String id, @RequestParam TopUpStatus status) {
         TopUp topUp;
         try {
@@ -48,18 +45,40 @@ public class TopUpController {
         return new ResponseEntity<>(bodySuccess(topUp), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, String>> deleteTopUp(@PathVariable String id) {
+        try {
+            topUpService.deleteTopUpById(id);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(bodyFail("Invalid id"), HttpStatus.BAD_REQUEST);
+        }
+        Map<String, String> body = new HashMap<>();
+        body.put("success", "true");
+        return new ResponseEntity<>(body, HttpStatus.OK);
+    }
+
     @PostMapping
-    @ResponseBody
     public ResponseEntity<Map<String, String>> createTopUp(@RequestParam String user, @RequestParam int amount) {
         TopUp topUp = topUpService.createTopUp(user, amount);
         return new ResponseEntity<>(bodySuccess(topUp), HttpStatus.OK);
     }
 
     @GetMapping("/user/{userId}")
-    @ResponseBody
     public ResponseEntity<List<TopUp>> getAllTopUpByUser(@PathVariable String userId) {
         List<TopUp> allTopUpByUser = topUpService.getAllTopUpByUser(userId);
         return new ResponseEntity<>(allTopUpByUser, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/user/{userId}")
+    public ResponseEntity<Map<String, String>> deleteTopUpByUser(@PathVariable String userId) {
+        try {
+            topUpService.deleteTopUpByUser(userId);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(bodyFail("Invalid user id"), HttpStatus.BAD_REQUEST);
+        }
+        Map<String, String> body = new HashMap<>();
+        body.put("success", "true");
+        return new ResponseEntity<>(body, HttpStatus.OK);
     }
 
     private Map<String, String> bodySuccess(TopUp topUp) {
