@@ -5,15 +5,16 @@ import advpro.b2.rasukanlsp.service.FeaturedDecoratorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpClientErrorException;
-
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/staff")
 public class StaffController {
+
+    private static final String LISTING_ID_MSG = "Listing with ID ";
+    private static final String NOT_FOUND_MSG = " not found";
+    private static final String INTERNAL_SERVER_ERROR_MSG = "Internal Server Error";
 
     private final FeaturedDecoratorService featuredService;
 
@@ -26,13 +27,15 @@ public class StaffController {
         try {
             UUID listingId = UUID.fromString(id);
             FeaturedListing listing = featuredService.getListingDetail(listingId).orElse(null);
-            return ResponseEntity.ok(listing);
-        } catch (HttpClientErrorException.NotFound e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
+            if (listing == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(LISTING_ID_MSG + id + NOT_FOUND_MSG);
+            } else {
+                return ResponseEntity.ok(listing);
+            }
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Listing with ID " + id + " not found");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid UUID format: " + id);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(INTERNAL_SERVER_ERROR_MSG);
         }
     }
 
@@ -41,11 +44,13 @@ public class StaffController {
         try {
             UUID listingId = UUID.fromString(id);
             String result = featuredService.markListingAsFeatured(listingId);
-            return ResponseEntity.ok(result);
-        } catch (HttpClientErrorException.NotFound e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
+            if (result == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(LISTING_ID_MSG + id + NOT_FOUND_MSG);
+            } else {
+                return ResponseEntity.ok(result);
+            }
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Listing with ID " + id + " not found");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid UUID format: " + id);
         }
     }
 
@@ -54,11 +59,13 @@ public class StaffController {
         try {
             UUID listingId = UUID.fromString(id);
             String result = featuredService.removeFeaturedStatus(listingId);
-            return ResponseEntity.ok(result);
-        } catch (HttpClientErrorException.NotFound e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Listing with ID " + id + " not found");
+            if (result == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(LISTING_ID_MSG + id + NOT_FOUND_MSG);
+            } else {
+                return ResponseEntity.ok(result);
+            }
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Listing with ID " + id + " not found");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid UUID format: " + id);
         }
     }
 

@@ -509,3 +509,58 @@
 2024-05-26T10:32:01.358+07:00  INFO 5353 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-26T10:32:01.973+07:00  INFO 5353 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-05-26T10:32:01.980+07:00  INFO 5353 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-26T10:59:53.626+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : Starting RasukanLSPApplicationTests using Java 21.0.2 with PID 10805 (started by yussanti in /Users/yussanti/Desktop/semester-4/ADPRO/tk/Rasukan-be-staff-listing-payment)
+2024-05-26T10:59:53.629+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : The following 1 profile is active: "dev"
+2024-05-26T10:59:55.546+07:00  INFO 10805 --- [RasukanAuth] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-26T10:59:55.649+07:00  INFO 10805 --- [RasukanAuth] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
+2024-05-26T10:59:56.903+07:00  INFO 10805 --- [RasukanAuth] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-26T10:59:57.041+07:00  INFO 10805 --- [RasukanAuth] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-26T10:59:57.115+07:00  INFO 10805 --- [RasukanAuth] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-26T10:59:57.643+07:00  INFO 10805 --- [RasukanAuth] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-26T10:59:57.696+07:00  INFO 10805 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-26T10:59:58.094+07:00  INFO 10805 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2ddb0d1a
+2024-05-26T10:59:58.097+07:00  INFO 10805 --- [RasukanAuth] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-26T10:59:58.243+07:00  WARN 10805 --- [RasukanAuth] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-26T11:00:00.227+07:00  INFO 10805 --- [RasukanAuth] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-26T11:00:00.319+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:00:00.320+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "listing_to_order" does not exist, skipping
+2024-05-26T11:00:00.324+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:00:00.324+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "featured_listings" does not exist, skipping
+2024-05-26T11:00:00.327+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:00:00.328+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "listing_to_order" does not exist, skipping
+2024-05-26T11:00:00.329+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-26T11:00:00.330+07:00  WARN 10805 --- [RasukanAuth] [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-26T11:00:00.429+07:00  INFO 10805 --- [RasukanAuth] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:00:01.934+07:00  WARN 10805 --- [RasukanAuth] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-26T11:00:03.362+07:00  INFO 10805 --- [RasukanAuth] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoint(s) beneath base path '/actuator'
+2024-05-26T11:00:03.474+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b.r.RasukanLSPApplicationTests         : Started RasukanLSPApplicationTests in 10.376 seconds (process running for 12.934)
+2024-05-26T11:00:05.305+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@1cf22470]
+2024-05-26T11:00:05.344+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@74147f3e]
+2024-05-26T11:00:05.359+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@5694be4c]
+2024-05-26T11:00:05.370+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@794e1391]
+2024-05-26T11:00:05.398+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@7c8f7a3d]
+2024-05-26T11:00:05.420+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@4ecac4d4]
+2024-05-26T11:00:05.500+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@3ea833e5]
+2024-05-26T11:00:05.597+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@7587d787]
+2024-05-26T11:00:05.612+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : [advpro.b2.rasukanlsp.dto.ListingDTO@7571f195]
+2024-05-26T11:00:08.162+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:00:08.171+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/invalid_listing_id
+2024-05-26T11:00:08.195+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: masuk method
+2024-05-26T11:00:08.196+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: ordernya ada
+2024-05-26T11:00:08.197+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listingid: a7b7c749-9242-4b08-b57d-cc4cc182a7d3
+2024-05-26T11:00:08.197+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/a7b7c749-9242-4b08-b57d-cc4cc182a7d3
+2024-05-26T11:00:08.198+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : getListingsByOrderId: listinG: {"listingId":"a7b7c749-9242-4b08-b57d-cc4cc182a7d3","name":"listing","price":1000,"stock":100,"seller":"add5bd8f-5662-48a1-bd90-3f758255e1ec","orderCounter":0}
+2024-05-26T11:00:08.202+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : list of listings: [advpro.b2.rasukanlsp.dto.ListingDTO@97acc9c]
+2024-05-26T11:00:08.274+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : masuk fetchuserbaalance
+2024-05-26T11:00:08.310+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : Updating user balance
+2024-05-26T11:00:08.310+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : e3b012da-23a3-46c3-9307-23387f350d85
+2024-05-26T11:00:08.312+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{},[]>
+2024-05-26T11:00:08.315+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : http://35.197.147.171/api/users/e3b012da-23a3-46c3-9307-23387f350d85/balance?balance=348870
+2024-05-26T11:00:08.360+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : masuk fetchlistingdetail
+2024-05-26T11:00:08.361+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : http://34.87.180.11/Buyer/listing/get/16b81013-7f96-4eab-8689-7d6ebf3bbc76
+2024-05-26T11:00:08.362+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : <200 OK OK,{"listingId":"16b81013-7f96-4eab-8689-7d6ebf3bbc76","name":null,"price":6969,"stock":69404,"seller":null,"orderCounter":0},[]>
+2024-05-26T11:00:08.366+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : berhasil get
+2024-05-26T11:00:08.416+07:00  INFO 10805 --- [RasukanAuth] [Test worker] a.b2.rasukanlsp.service.OrderService     : Updating stock listing
+2024-05-26T11:00:08.451+07:00  INFO 10805 --- [RasukanAuth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-26T11:00:08.961+07:00  INFO 10805 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-26T11:00:08.968+07:00  INFO 10805 --- [RasukanAuth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
