@@ -55,14 +55,14 @@ public class TopUpServiceTest {
     @Test
     void testCreateTopUp_success() {
         TopUp topUp = topUpList.getFirst();
-        UUID user = topUp.getUser();
+        UUID user = topUp.getUserId();
         int amount = topUp.getAmount();
         doReturn(topUp).when(topUpRepository).save(any(TopUp.class));
 
         TopUp createdTopUp = topUpService.createTopUp(user.toString(), amount);
         verify(topUpRepository, times(1)).save(any(TopUp.class));
 
-        assertEquals(user, createdTopUp.getUser());
+        assertEquals(user, createdTopUp.getUserId());
         assertNotNull(createdTopUp.getId());
         assertEquals(TopUpStatus.PENDING, createdTopUp.getStatus());
         assertEquals(amount, createdTopUp.getAmount());
@@ -101,10 +101,26 @@ public class TopUpServiceTest {
         doReturn(opt).when(topUpRepository).findById(any(UUID.class));
         doReturn(topUp).when(topUpRepository).save(any(TopUp.class));
 
-        assertNotEquals(TopUpStatus.ACCEPTED, curStatus);
+        assertNotEquals(TopUpStatus.REJECTED, curStatus);
 
-        TopUp updatedTopUp = topUpService.updateStatus(id.toString(), TopUpStatus.ACCEPTED);
+        TopUp updatedTopUp = topUpService.updateStatus(id.toString(), TopUpStatus.REJECTED);
+        assertEquals(TopUpStatus.REJECTED, updatedTopUp.getStatus());
+    }
 
-        assertEquals(TopUpStatus.ACCEPTED, updatedTopUp.getStatus());
+    @Test
+    void testGetAllTopUpByUser() {
+        UUID userId = UUID.randomUUID();
+        List<TopUp> topUpUser = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            TopUp topUp = new TopUp(UUID.randomUUID(), userId, 10000);
+            topUpUser.add(topUp);
+        }
+        doReturn(topUpUser).when(topUpRepository).findByUserId(any(UUID.class));
+
+        List<TopUp> allTopUpByUser = topUpService.getAllTopUpByUser(userId.toString());
+        assertEquals(topUpUser.size(), allTopUpByUser.size());
+        for (TopUp topUp : allTopUpByUser) {
+            assertEquals(userId, topUp.getUserId());
+        }
     }
 }
